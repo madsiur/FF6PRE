@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="FF6PRE.Views.MainMenuView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FF6PRE.Views"
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="1200">
+    <DockPanel>
+        <StackPanel DockPanel.Dock="Left" Width="200">
+            <Menu HorizontalAlignment="Stretch" FontSize="16">
+                <Menu.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                                <RowDefinition/>
+                            </Grid.RowDefinitions>
+                        </Grid>
+                    </ItemsPanelTemplate>
+                </Menu.ItemsPanel>
+                <MenuItem Grid.Row="0" Command="{Binding GoToPathSelection}" Header="Asset path selection" />
+                <MenuItem Grid.Row="1" IsEnabled="{Binding IsAiEnabled}" Command="{Binding GoToAiEditor}" Header="AI scripts" />
+                <MenuItem Grid.Row="2" IsEnabled="{Binding IsSaveEnabled}" Command="{Binding SaveFiles}" Header="Save" />
+                <MenuItem Grid.Row="3" Command="{Binding ExitProgram}" Header="Exit" />
+            </Menu>
+        </StackPanel>
+        <Grid DockPanel.Dock="Right">
+            <ContentControl Content="{Binding CurrentView}"/>
+        </Grid>
+    </DockPanel>
+</UserControl>
