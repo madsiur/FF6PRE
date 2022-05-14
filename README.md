@@ -5,7 +5,7 @@ FF6 Pixel Remaster Editor
 You first need to extract the game assets with [Memoria](https://github.com/Albeoris/Memoria.FFPR). After that open the editor and select the extracted "Assets" path. The path will be saved in `settings.json`. You can also specify another path but the folder structure must be the same as the extracted one. You should then be able to load and edit AI scripts.
 
 ## Requirements
-This application require .NET Core 3.1.
+This application require .NET Core 3.1. You can find the latest .NET Desktop Runtime to install [here](https://dotnet.microsoft.com/en-us/download/dotnet/3.1).
 
 ## Future development
 Here's a few things I'd like to add for the AI editor:
