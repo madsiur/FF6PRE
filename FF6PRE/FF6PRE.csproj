@@ -8,27 +8,12 @@
     <UseWindowsForms>True</UseWindowsForms>
     <PackageIcon>icon.png</PackageIcon>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Images\green_button.png" />
-    <None Remove="Images\red_button.png" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Content Include="icon.ico" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="..\..\..\..\Desktop\icon.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="Images\green_button.png" />
-    <Resource Include="Images\red_button.png" />
   </ItemGroup>
 
 </Project>

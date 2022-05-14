@@ -161,6 +161,27 @@ namespace FF6PRE.ViewModels
             }
         }
 
+        private ICommand _addMnemonicCommand;
+        public ICommand AddMnemonicCommand
+        {
+            get { return _addMnemonicCommand; }
+            set { OnPropertyChanged(ref _addMnemonicCommand, value); }
+        }
+
+        private ICommand _deleteMnemonicCommand;
+        public ICommand DeleteMnemonicCommand
+        {
+            get { return _deleteMnemonicCommand; }
+            set { OnPropertyChanged(ref _deleteMnemonicCommand, value); }
+        }
+
+        private ICommand _restoreScriptCommand;
+        public ICommand RestoreScriptCommand
+        {
+            get { return _restoreScriptCommand; }
+            set { OnPropertyChanged(ref _restoreScriptCommand, value); }
+        }
+
         private int ScriptIndex
         {
             get { return AiScripts.IndexOf(SelectedAiScript); }
@@ -168,23 +189,23 @@ namespace FF6PRE.ViewModels
 
         private bool isInitMnemonic = false;
         private bool isChangingProperty = false;
-        private bool isChangingEnabled = false;
 
-        private Uri redButtonUri = new Uri("pack://application:,,,/Images/red_button.png");
-        private Uri greenButtonUri = new Uri("pack://application:,,,/Images/green_button.png");
-        private ImageSource redButtonImage;
-        private ImageSource greenButtonImage;
+        private Brush redButtonBrush;
+        private Brush greenButtonBrush;
+
+        private List<AiScript> aiScriptsBackups;
 
         public AiEditorViewModel(MainMenuViewModel mainMenuVM, ref List<AiScript> aiScripts)
         {
-            redButtonImage = buildImageSource(redButtonUri);
-            greenButtonImage = buildImageSource(greenButtonUri);
+            aiScriptsBackups = aiScripts.Select(item => item.Clone()).ToList();
+            redButtonBrush = new SolidColorBrush(Color.FromArgb(255, 200, 80, 80));
+            greenButtonBrush = new SolidColorBrush(Color.FromArgb(255, 80, 200, 80));
             this.MainMenuVM = mainMenuVM;
             this.AiScripts = aiScripts;
             SelectedAiScript = AiScripts[0];
             AvailableMnemonics = buildMnemonicList();
             buildTypes();
-            setCCommands();
+            setCommands();
         }
 
         private void buildTypes()
@@ -212,22 +233,11 @@ namespace FF6PRE.ViewModels
             return mnemonics;
         }
 
-        private ImageSource buildImageSource(Uri uri)
-        {
-            BitmapImage bitmapImage = new BitmapImage();
-            bitmapImage.BeginInit();
-            bitmapImage.UriSource = uri;
-            bitmapImage.EndInit();
-            ImageSource imgsrc = bitmapImage as ImageSource;
-            return imgsrc;
-        }
-
         #region REFRESH FUNCTION
 
         private void refreshMnemonic()
         {
             isInitMnemonic = true;
-            isChangingEnabled = false;
             CurrentMnemonicName = _currentAiMnemonic.MnemonicName;
             CurrentType = _currentAiMnemonic.Type;
             CurrentLabel = _currentAiMnemonic.Label;
@@ -420,10 +430,46 @@ namespace FF6PRE.ViewModels
             }
 
             isInitMnemonic = false;
-            isChangingEnabled = true;
         }
 
         #endregion
+
+        private void AddMnemonic()
+        {
+            int index = AiScripts[ScriptIndex].Mnemonics.IndexOf(CurrentAiMnemonic) + 1;
+            JsonOperands op = new JsonOperands();
+            op.iValues = new List<int>();
+            op.rValues = new List<float>();
+            op.sValues = new List<string>();
+            Mnemonic m = new Mnemonic(index + 1, string.Empty, "Nop", 1, string.Empty, op);
+            AiScripts[ScriptIndex].Mnemonics.Insert(index, m);
+            for (int i = index + 1; i < AiScripts[ScriptIndex].Mnemonics.Count; i++)
+            {
+                AiScripts[ScriptIndex].Mnemonics[i].Id++;
+            }
+            setSelectedAiScript();
+        }
+
+        private void DeleteMnemonic()
+        {
+            if (SelectedAiScript.Mnemonics.Count > 1)
+            {
+                int index = AiScripts[ScriptIndex].Mnemonics.IndexOf(CurrentAiMnemonic);
+                for (int i = index + 1; i < AiScripts[ScriptIndex].Mnemonics.Count; i++)
+                {
+                    AiScripts[ScriptIndex].Mnemonics[i].Id--;
+                }
+                AiScripts[ScriptIndex].Mnemonics.RemoveAt(index);
+                setSelectedAiScript();
+            }
+        }
+
+        private void RestoreScript()
+        {
+            int index = ScriptIndex;
+            AiScripts[index] = aiScriptsBackups[index].Clone();
+            SelectedAiScript = AiScripts[index];
+        }
 
         private void setIValue(int opVal, int index)
         {
@@ -559,7 +605,7 @@ namespace FF6PRE.ViewModels
                 addSValue(value);
         }
 
-        private void setCCommands()
+        private void setCommands()
         {
             IValue1ButtonClick = new RelayCommand(ClickIValue1Button);
             IValue2ButtonClick = new RelayCommand(ClickIValue2Button);
@@ -587,6 +633,10 @@ namespace FF6PRE.ViewModels
             SValue6ButtonClick = new RelayCommand(ClickSValue6Button);
             SValue7ButtonClick = new RelayCommand(ClickSValue7Button);
             SValue8ButtonClick = new RelayCommand(ClickSValue8Button);
+
+            AddMnemonicCommand = new RelayCommand(AddMnemonic);
+            DeleteMnemonicCommand = new RelayCommand(DeleteMnemonic);
+            RestoreScriptCommand = new RelayCommand(RestoreScript);
         }
 
         #region CLICK FUNCTIONS
@@ -1693,11 +1743,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue1 == false)
                 {
-                    IValue1ButtonImage = redButtonImage;
+                    IValue1ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue1ButtonImage = greenButtonImage;
+                    IValue1ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1712,11 +1762,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue2 == false)
                 {
-                    IValue2ButtonImage = redButtonImage;
+                    IValue2ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue2ButtonImage = greenButtonImage;
+                    IValue2ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1731,11 +1781,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue3 == false)
                 {
-                    IValue3ButtonImage = redButtonImage;
+                    IValue3ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue3ButtonImage = greenButtonImage;
+                    IValue3ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1750,11 +1800,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue4 == false)
                 {
-                    IValue4ButtonImage = redButtonImage;
+                    IValue4ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue4ButtonImage = greenButtonImage;
+                    IValue4ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1769,11 +1819,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue5 == false)
                 {
-                    IValue5ButtonImage = redButtonImage;
+                    IValue5ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue5ButtonImage = greenButtonImage;
+                    IValue5ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1788,11 +1838,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue6 == false)
                 {
-                    IValue6ButtonImage = redButtonImage;
+                    IValue6ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue6ButtonImage = greenButtonImage;
+                    IValue6ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1807,11 +1857,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue7 == false)
                 {
-                    IValue7ButtonImage = redButtonImage;
+                    IValue7ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue7ButtonImage = greenButtonImage;
+                    IValue7ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1826,11 +1876,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledIValue8 == false)
                 {
-                    IValue8ButtonImage = redButtonImage;
+                    IValue8ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    IValue8ButtonImage = greenButtonImage;
+                    IValue8ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1845,11 +1895,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue1 == false)
                 {
-                    RValue1ButtonImage = redButtonImage;
+                    RValue1ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue1ButtonImage = greenButtonImage;
+                    RValue1ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1864,11 +1914,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue2 == false)
                 {
-                    RValue2ButtonImage = redButtonImage;
+                    RValue2ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue2ButtonImage = greenButtonImage;
+                    RValue2ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1883,11 +1933,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue3 == false)
                 {
-                    RValue3ButtonImage = redButtonImage;
+                    RValue3ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue3ButtonImage = greenButtonImage;
+                    RValue3ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1902,11 +1952,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue4 == false)
                 {
-                    RValue4ButtonImage = redButtonImage;
+                    RValue4ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue4ButtonImage = greenButtonImage;
+                    RValue4ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1921,11 +1971,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue5 == false)
                 {
-                    RValue5ButtonImage = redButtonImage;
+                    RValue5ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue5ButtonImage = greenButtonImage;
+                    RValue5ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1940,11 +1990,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue6 == false)
                 {
-                    RValue6ButtonImage = redButtonImage;
+                    RValue6ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue6ButtonImage = greenButtonImage;
+                    RValue6ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1959,11 +2009,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue7 == false)
                 {
-                    RValue7ButtonImage = redButtonImage;
+                    RValue7ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue7ButtonImage = greenButtonImage;
+                    RValue7ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1978,11 +2028,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledRValue8 == false)
                 {
-                    RValue8ButtonImage = redButtonImage;
+                    RValue8ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    RValue8ButtonImage = greenButtonImage;
+                    RValue8ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -1997,11 +2047,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue1 == false)
                 {
-                    SValue1ButtonImage = redButtonImage;
+                    SValue1ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue1ButtonImage = greenButtonImage;
+                    SValue1ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2016,11 +2066,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue2 == false)
                 {
-                    SValue2ButtonImage = redButtonImage;
+                    SValue2ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue2ButtonImage = greenButtonImage;
+                    SValue2ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2035,11 +2085,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue3 == false)
                 {
-                    SValue3ButtonImage = redButtonImage;
+                    SValue3ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue3ButtonImage = greenButtonImage;
+                    SValue3ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2054,11 +2104,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue4 == false)
                 {
-                    SValue4ButtonImage = redButtonImage;
+                    SValue4ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue4ButtonImage = greenButtonImage;
+                    SValue4ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2073,11 +2123,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue5 == false)
                 {
-                    SValue5ButtonImage = redButtonImage;
+                    SValue5ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue5ButtonImage = greenButtonImage;
+                    SValue5ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2092,11 +2142,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue6 == false)
                 {
-                    SValue6ButtonImage = redButtonImage;
+                    SValue6ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue6ButtonImage = greenButtonImage;
+                    SValue6ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2111,11 +2161,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue7 == false)
                 {
-                    SValue7ButtonImage = redButtonImage;
+                    SValue7ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue7ButtonImage = greenButtonImage;
+                    SValue7ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2130,11 +2180,11 @@ namespace FF6PRE.ViewModels
 
                 if (_isEnabledSValue8 == false)
                 {
-                    SValue8ButtonImage = redButtonImage;
+                    SValue8ButtonBrush = redButtonBrush;
                 }
                 else
                 {
-                    SValue8ButtonImage = greenButtonImage;
+                    SValue8ButtonBrush = greenButtonBrush;
                 }
             }
         }
@@ -2307,172 +2357,172 @@ namespace FF6PRE.ViewModels
             set { OnPropertyChanged(ref _sValue8ButtonClick, value); }
         }
 
-        private ImageSource _iValue1ButtonImage;
-        public ImageSource IValue1ButtonImage
+        private Brush _iValue1ButtonBrush;
+        public Brush IValue1ButtonBrush
         {
-            get { return _iValue1ButtonImage; }
-            set { OnPropertyChanged(ref _iValue1ButtonImage, value); }
+            get { return _iValue1ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue1ButtonBrush, value); }
         }
 
-        private ImageSource _iValue2ButtonImage;
-        public ImageSource IValue2ButtonImage
+        private Brush _iValue2ButtonBrush;
+        public Brush IValue2ButtonBrush
         {
-            get { return _iValue2ButtonImage; }
-            set { OnPropertyChanged(ref _iValue2ButtonImage, value); }
+            get { return _iValue2ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue2ButtonBrush, value); }
         }
 
-        private ImageSource _iValue3ButtonImage;
-        public ImageSource IValue3ButtonImage
+        private Brush _iValue3ButtonBrush;
+        public Brush IValue3ButtonBrush
         {
-            get { return _iValue3ButtonImage; }
-            set { OnPropertyChanged(ref _iValue3ButtonImage, value); }
+            get { return _iValue3ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue3ButtonBrush, value); }
         }
 
-        private ImageSource _iValue4ButtonImage;
-        public ImageSource IValue4ButtonImage
+        private Brush _iValue4ButtonBrush;
+        public Brush IValue4ButtonBrush
         {
-            get { return _iValue4ButtonImage; }
-            set { OnPropertyChanged(ref _iValue4ButtonImage, value); }
+            get { return _iValue4ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue4ButtonBrush, value); }
         }
 
-        private ImageSource _iValue5ButtonImage;
-        public ImageSource IValue5ButtonImage
+        private Brush _iValue5ButtonBrush;
+        public Brush IValue5ButtonBrush
         {
-            get { return _iValue5ButtonImage; }
-            set { OnPropertyChanged(ref _iValue5ButtonImage, value); }
+            get { return _iValue5ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue5ButtonBrush, value); }
         }
 
-        private ImageSource _iValue6ButtonImage;
-        public ImageSource IValue6ButtonImage
+        private Brush _iValue6ButtonBrush;
+        public Brush IValue6ButtonBrush
         {
-            get { return _iValue6ButtonImage; }
-            set { OnPropertyChanged(ref _iValue6ButtonImage, value); }
+            get { return _iValue6ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue6ButtonBrush, value); }
         }
 
-        private ImageSource _iValue7ButtonImage;
-        public ImageSource IValue7ButtonImage
+        private Brush _iValue7ButtonBrush;
+        public Brush IValue7ButtonBrush
         {
-            get { return _iValue7ButtonImage; }
-            set { OnPropertyChanged(ref _iValue7ButtonImage, value); }
+            get { return _iValue7ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue7ButtonBrush, value); }
         }
 
-        private ImageSource _iValue8ButtonImage;
-        public ImageSource IValue8ButtonImage
+        private Brush _iValue8ButtonBrush;
+        public Brush IValue8ButtonBrush
         {
-            get { return _iValue8ButtonImage; }
-            set { OnPropertyChanged(ref _iValue8ButtonImage, value); }
+            get { return _iValue8ButtonBrush; }
+            set { OnPropertyChanged(ref _iValue8ButtonBrush, value); }
         }
 
-        private ImageSource _rValue1ButtonImage;
-        public ImageSource RValue1ButtonImage
+        private Brush _rValue1ButtonBrush;
+        public Brush RValue1ButtonBrush
         {
-            get { return _rValue1ButtonImage; }
-            set { OnPropertyChanged(ref _rValue1ButtonImage, value); }
+            get { return _rValue1ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue1ButtonBrush, value); }
         }
 
-        private ImageSource _rValue2ButtonImage;
-        public ImageSource RValue2ButtonImage
+        private Brush _rValue2ButtonBrush;
+        public Brush RValue2ButtonBrush
         {
-            get { return _rValue2ButtonImage; }
-            set { OnPropertyChanged(ref _rValue2ButtonImage, value); }
+            get { return _rValue2ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue2ButtonBrush, value); }
         }
 
-        private ImageSource _rValue3ButtonImage;
-        public ImageSource RValue3ButtonImage
+        private Brush _rValue3ButtonBrush;
+        public Brush RValue3ButtonBrush
         {
-            get { return _rValue3ButtonImage; }
-            set { OnPropertyChanged(ref _rValue3ButtonImage, value); }
+            get { return _rValue3ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue3ButtonBrush, value); }
         }
 
-        private ImageSource _rValue4ButtonImage;
-        public ImageSource RValue4ButtonImage
+        private Brush _rValue4ButtonBrush;
+        public Brush RValue4ButtonBrush
         {
-            get { return _rValue4ButtonImage; }
-            set { OnPropertyChanged(ref _rValue4ButtonImage, value); }
+            get { return _rValue4ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue4ButtonBrush, value); }
         }
 
-        private ImageSource _rValue5ButtonImage;
-        public ImageSource RValue5ButtonImage
+        private Brush _rValue5ButtonBrush;
+        public Brush RValue5ButtonBrush
         {
-            get { return _rValue5ButtonImage; }
-            set { OnPropertyChanged(ref _rValue5ButtonImage, value); }
+            get { return _rValue5ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue5ButtonBrush, value); }
         }
 
-        private ImageSource _rValue6ButtonImage;
-        public ImageSource RValue6ButtonImage
+        private Brush _rValue6ButtonBrush;
+        public Brush RValue6ButtonBrush
         {
-            get { return _rValue6ButtonImage; }
-            set { OnPropertyChanged(ref _rValue6ButtonImage, value); }
+            get { return _rValue6ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue6ButtonBrush, value); }
         }
 
-        private ImageSource _rValue7ButtonImage;
-        public ImageSource RValue7ButtonImage
+        private Brush _rValue7ButtonBrush;
+        public Brush RValue7ButtonBrush
         {
-            get { return _rValue7ButtonImage; }
-            set { OnPropertyChanged(ref _rValue7ButtonImage, value); }
+            get { return _rValue7ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue7ButtonBrush, value); }
         }
 
-        private ImageSource _rValue8ButtonImage;
-        public ImageSource RValue8ButtonImage
+        private Brush _rValue8ButtonBrush;
+        public Brush RValue8ButtonBrush
         {
-            get { return _rValue8ButtonImage; }
-            set { OnPropertyChanged(ref _rValue8ButtonImage, value); }
+            get { return _rValue8ButtonBrush; }
+            set { OnPropertyChanged(ref _rValue8ButtonBrush, value); }
         }
 
-        private ImageSource _sValue1ButtonImage;
-        public ImageSource SValue1ButtonImage
+        private Brush _sValue1ButtonBrush;
+        public Brush SValue1ButtonBrush
         {
-            get { return _sValue1ButtonImage; }
-            set { OnPropertyChanged(ref _sValue1ButtonImage, value); }
+            get { return _sValue1ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue1ButtonBrush, value); }
         }
 
-        private ImageSource _sValue2ButtonImage;
-        public ImageSource SValue2ButtonImage
+        private Brush _sValue2ButtonBrush;
+        public Brush SValue2ButtonBrush
         {
-            get { return _sValue2ButtonImage; }
-            set { OnPropertyChanged(ref _sValue2ButtonImage, value); }
+            get { return _sValue2ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue2ButtonBrush, value); }
         }
 
-        private ImageSource _sValue3ButtonImage;
-        public ImageSource SValue3ButtonImage
+        private Brush _sValue3ButtonBrush;
+        public Brush SValue3ButtonBrush
         {
-            get { return _sValue3ButtonImage; }
-            set { OnPropertyChanged(ref _sValue3ButtonImage, value); }
+            get { return _sValue3ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue3ButtonBrush, value); }
         }
 
-        private ImageSource _sValue4ButtonImage;
-        public ImageSource SValue4ButtonImage
+        private Brush _sValue4ButtonBrush;
+        public Brush SValue4ButtonBrush
         {
-            get { return _sValue4ButtonImage; }
-            set { OnPropertyChanged(ref _sValue4ButtonImage, value); }
+            get { return _sValue4ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue4ButtonBrush, value); }
         }
 
-        private ImageSource _sValue5ButtonImage;
-        public ImageSource SValue5ButtonImage
+        private Brush _sValue5ButtonBrush;
+        public Brush SValue5ButtonBrush
         {
-            get { return _sValue5ButtonImage; }
-            set { OnPropertyChanged(ref _sValue5ButtonImage, value); }
+            get { return _sValue5ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue5ButtonBrush, value); }
         }
 
-        private ImageSource _sValue6ButtonImage;
-        public ImageSource SValue6ButtonImage
+        private Brush _sValue6ButtonBrush;
+        public Brush SValue6ButtonBrush
         {
-            get { return _sValue6ButtonImage; }
-            set { OnPropertyChanged(ref _sValue6ButtonImage, value); }
+            get { return _sValue6ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue6ButtonBrush, value); }
         }
 
-        private ImageSource _sValue7ButtonImage;
-        public ImageSource SValue7ButtonImage
+        private Brush _sValue7ButtonBrush;
+        public Brush SValue7ButtonBrush
         {
-            get { return _sValue7ButtonImage; }
-            set { OnPropertyChanged(ref _sValue7ButtonImage, value); }
+            get { return _sValue7ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue7ButtonBrush, value); }
         }
 
-        private ImageSource _sValue8ButtonImage;
-        public ImageSource SValue8ButtonImage
+        private Brush _sValue8ButtonBrush;
+        public Brush SValue8ButtonBrush
         {
-            get { return _sValue8ButtonImage; }
-            set { OnPropertyChanged(ref _sValue8ButtonImage, value); }
+            get { return _sValue8ButtonBrush; }
+            set { OnPropertyChanged(ref _sValue8ButtonBrush, value); }
         }
 
         #endregion

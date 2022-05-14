@@ -23,7 +23,7 @@
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Content="AI Scripts" FontSize="16" />
-                <ComboBox Grid.Row="1" VerticalAlignment="Top" Height="26" Margin="6,0,6,0"
+                <ComboBox Grid.Row="1" VerticalAlignment="Top" Height="28" Margin="6,0,6,0"
                       ItemsSource="{Binding AiScripts}"
                       SelectedItem="{Binding SelectedAiScript, Mode=TwoWay}">
                     <ComboBox.ItemTemplate>
@@ -39,6 +39,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="30" />
                     <RowDefinition />
+                    <RowDefinition Height="38" />
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Content="Current script" FontSize="16" />
                 <DataGrid Grid.Row="1" VerticalAlignment="Stretch" Margin="6,0,6,2" AutoGenerateColumns="False"
@@ -51,6 +52,14 @@
                         <DataGridTextColumn Header="Operands" Binding="{Binding Description}" IsReadOnly="True" Width="*" />
                     </DataGrid.Columns>
                 </DataGrid>
+                <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,0,0" FontSize="16" Content="Restore script"
+                            Command="{Binding RestoreScriptCommand}"/>
+                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,6,0" FontSize="16" Content="Insert new mnemonic"
+                            Command="{Binding AddMnemonicCommand}"/>
+                    <Button Height="28" Padding="6,0,6,0" Margin="0,0,6,0" FontSize="16"  Content="Delete current mnemonic"
+                            Command="{Binding DeleteMnemonicCommand}"/>
+                </StackPanel>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
@@ -74,17 +83,17 @@
                     <RowDefinition  Height="15"/>
                 </Grid.RowDefinitions>
                 <Label Grid.Row="1" Content="Mnemonic" FontSize="16" Margin="0,8,0,0" />
-                <ComboBox Grid.Row="2" Height="26" Margin="6,0,6,0" FontSize="16"
+                <ComboBox Grid.Row="2" Height="28" Margin="6,0,6,0" FontSize="16"
                       ItemsSource="{Binding AvailableMnemonics}"
                       SelectedItem="{Binding CurrentMnemonicName, Mode=TwoWay}" />
                 <Label Grid.Row="3" Content="Type" FontSize="16" Margin="0,8,0,0" />
-                <ComboBox Grid.Row="4" Height="26" Margin="6,0,6,0" FontSize="16"
+                <ComboBox Grid.Row="4" Height="28" Margin="6,0,6,0" FontSize="16"
                       ItemsSource="{Binding AvailableTypes}"
                       SelectedItem="{Binding CurrentType, Mode=TwoWay}" />
                 <Label Grid.Row="5" Content="Label" FontSize="16" Margin="0,8,0,0" />
-                <TextBox Grid.Row="6" Height="26" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentLabel}" />
+                <TextBox Grid.Row="6" Height="28" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentLabel}" />
                 <Label Grid.Row="7" Content="Comment" FontSize="16" Margin="0,8,0,0" />
-                <TextBox Grid.Row="8" Height="26" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentComment}" />
+                <TextBox Grid.Row="8" Height="28" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentComment}" />
             </Grid>
             <uc:DefaultValues Grid.Column="1" Margin="4,0,4,0" Title="iValues"
                               Value1="{Binding IValue1, Mode=TwoWay}" Value2="{Binding IValue2, Mode=TwoWay}"
@@ -99,10 +108,10 @@
                               ButtonCommand3="{Binding IValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding IValue4ButtonClick, Mode=TwoWay}"
                               ButtonCommand5="{Binding IValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding IValue6ButtonClick, Mode=TwoWay}"
                               ButtonCommand7="{Binding IValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding IValue8ButtonClick, Mode=TwoWay}"
-                              Button1Image="{Binding IValue1ButtonImage, Mode=TwoWay}" Button2Image="{Binding IValue2ButtonImage, Mode=TwoWay}"
-                              Button3Image="{Binding IValue3ButtonImage, Mode=TwoWay}" Button4Image="{Binding IValue4ButtonImage, Mode=TwoWay}"
-                              Button5Image="{Binding IValue5ButtonImage, Mode=TwoWay}" Button6Image="{Binding IValue6ButtonImage, Mode=TwoWay}"
-                              Button7Image="{Binding IValue7ButtonImage, Mode=TwoWay}" Button8Image="{Binding IValue8ButtonImage, Mode=TwoWay}"/>
+                              Button1Brush="{Binding IValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding IValue2ButtonBrush, Mode=TwoWay}"
+                              Button3Brush="{Binding IValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding IValue4ButtonBrush, Mode=TwoWay}"
+                              Button5Brush="{Binding IValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding IValue6ButtonBrush, Mode=TwoWay}"
+                              Button7Brush="{Binding IValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding IValue8ButtonBrush, Mode=TwoWay}"/>
             <uc:DefaultValues Grid.Column="2" Margin="4,0,4,0" Title="rValues"
                               Value1="{Binding RValue1, Mode=TwoWay}" Value2="{Binding RValue2, Mode=TwoWay}"
                               Value3="{Binding RValue3, Mode=TwoWay}" Value4="{Binding RValue4, Mode=TwoWay}"
@@ -116,10 +125,10 @@
                               ButtonCommand3="{Binding RValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding RValue4ButtonClick, Mode=TwoWay}"
                               ButtonCommand5="{Binding RValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding RValue6ButtonClick, Mode=TwoWay}"
                               ButtonCommand7="{Binding RValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding RValue8ButtonClick, Mode=TwoWay}"
-                              Button1Image="{Binding RValue1ButtonImage, Mode=TwoWay}" Button2Image="{Binding RValue2ButtonImage, Mode=TwoWay}"
-                              Button3Image="{Binding RValue3ButtonImage, Mode=TwoWay}" Button4Image="{Binding RValue4ButtonImage, Mode=TwoWay}"
-                              Button5Image="{Binding RValue5ButtonImage, Mode=TwoWay}" Button6Image="{Binding RValue6ButtonImage, Mode=TwoWay}"
-                              Button7Image="{Binding RValue7ButtonImage, Mode=TwoWay}" Button8Image="{Binding RValue8ButtonImage, Mode=TwoWay}"/>
+                              Button1Brush="{Binding RValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding RValue2ButtonBrush, Mode=TwoWay}"
+                              Button3Brush="{Binding RValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding RValue4ButtonBrush, Mode=TwoWay}"
+                              Button5Brush="{Binding RValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding RValue6ButtonBrush, Mode=TwoWay}"
+                              Button7Brush="{Binding RValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding RValue8ButtonBrush, Mode=TwoWay}"/>
             <uc:DefaultValues Grid.Column="3" Margin="4,0,4,0" Title="sValues"
                               Value1="{Binding SValue1, Mode=TwoWay}" Value2="{Binding SValue2, Mode=TwoWay}"
                               Value3="{Binding SValue3, Mode=TwoWay}" Value4="{Binding SValue4, Mode=TwoWay}"
@@ -133,10 +142,10 @@
                               ButtonCommand3="{Binding SValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding SValue4ButtonClick, Mode=TwoWay}"
                               ButtonCommand5="{Binding SValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding SValue6ButtonClick, Mode=TwoWay}"
                               ButtonCommand7="{Binding SValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding SValue8ButtonClick, Mode=TwoWay}"
-                              Button1Image="{Binding SValue1ButtonImage, Mode=TwoWay}" Button2Image="{Binding SValue2ButtonImage, Mode=TwoWay}"
-                              Button3Image="{Binding SValue3ButtonImage, Mode=TwoWay}" Button4Image="{Binding SValue4ButtonImage, Mode=TwoWay}"
-                              Button5Image="{Binding SValue5ButtonImage, Mode=TwoWay}" Button6Image="{Binding SValue6ButtonImage, Mode=TwoWay}"
-                              Button7Image="{Binding SValue7ButtonImage, Mode=TwoWay}" Button8Image="{Binding SValue8ButtonImage, Mode=TwoWay}"/>
+                              Button1Brush="{Binding SValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding SValue2ButtonBrush, Mode=TwoWay}"
+                              Button3Brush="{Binding SValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding SValue4ButtonBrush, Mode=TwoWay}"
+                              Button5Brush="{Binding SValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding SValue6ButtonBrush, Mode=TwoWay}"
+                              Button7Brush="{Binding SValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding SValue8ButtonBrush, Mode=TwoWay}"/>
         </Grid>
     </Grid>
 </UserControl>

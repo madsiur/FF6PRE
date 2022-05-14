@@ -248,76 +248,76 @@ namespace FF6PRE.UC
         public static readonly DependencyProperty ButtonCommand8Property =
             DependencyProperty.Register(nameof(ButtonCommand8), typeof(ICommand), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button1Image
+        public Brush Button1Brush
         {
-            get { return (ImageSource)GetValue(Button1ImageProperty); }
-            set { SetValue(Button1ImageProperty, value); }
+            get { return (Brush)GetValue(Button1BrushProperty); }
+            set { SetValue(Button1BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button1ImageProperty =
-            DependencyProperty.Register(nameof(Button1Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button1BrushProperty =
+            DependencyProperty.Register(nameof(Button1Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button2Image
+        public Brush Button2Brush
         {
-            get { return (ImageSource)GetValue(Button2ImageProperty); }
-            set { SetValue(Button2ImageProperty, value); }
+            get { return (Brush)GetValue(Button2BrushProperty); }
+            set { SetValue(Button2BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button2ImageProperty =
-            DependencyProperty.Register(nameof(Button2Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button2BrushProperty =
+            DependencyProperty.Register(nameof(Button2Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button3Image
+        public Brush Button3Brush
         {
-            get { return (ImageSource)GetValue(Button3ImageProperty); }
-            set { SetValue(Button3ImageProperty, value); }
+            get { return (Brush)GetValue(Button3BrushProperty); }
+            set { SetValue(Button3BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button3ImageProperty =
-            DependencyProperty.Register(nameof(Button3Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button3BrushProperty =
+            DependencyProperty.Register(nameof(Button3Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button4Image
+        public Brush Button4Brush
         {
-            get { return (ImageSource)GetValue(Button4ImageProperty); }
-            set { SetValue(Button4ImageProperty, value); }
+            get { return (Brush)GetValue(Button4BrushProperty); }
+            set { SetValue(Button4BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button4ImageProperty =
-            DependencyProperty.Register(nameof(Button4Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button4BrushProperty =
+            DependencyProperty.Register(nameof(Button4Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button5Image
+        public Brush Button5Brush
         {
-            get { return (ImageSource)GetValue(Button5ImageProperty); }
-            set { SetValue(Button5ImageProperty, value); }
+            get { return (Brush)GetValue(Button5BrushProperty); }
+            set { SetValue(Button5BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button5ImageProperty =
-            DependencyProperty.Register(nameof(Button5Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button5BrushProperty =
+            DependencyProperty.Register(nameof(Button5Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button6Image
+        public Brush Button6Brush
         {
-            get { return (ImageSource)GetValue(Button6ImageProperty); }
-            set { SetValue(Button6ImageProperty, value); }
+            get { return (Brush)GetValue(Button6BrushProperty); }
+            set { SetValue(Button6BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button6ImageProperty =
-            DependencyProperty.Register(nameof(Button6Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button6BrushProperty =
+            DependencyProperty.Register(nameof(Button6Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button7Image
+        public Brush Button7Brush
         {
-            get { return (ImageSource)GetValue(Button7ImageProperty); }
-            set { SetValue(Button7ImageProperty, value); }
+            get { return (Brush)GetValue(Button7BrushProperty); }
+            set { SetValue(Button7BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button7ImageProperty =
-            DependencyProperty.Register(nameof(Button7Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button7BrushProperty =
+            DependencyProperty.Register(nameof(Button7Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
 
-        public ImageSource Button8Image
+        public Brush Button8Brush
         {
-            get { return (ImageSource)GetValue(Button8ImageProperty); }
-            set { SetValue(Button8ImageProperty, value); }
+            get { return (Brush)GetValue(Button8BrushProperty); }
+            set { SetValue(Button8BrushProperty, value); }
         }
 
-        public static readonly DependencyProperty Button8ImageProperty =
-            DependencyProperty.Register(nameof(Button8Image), typeof(ImageSource), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
+        public static readonly DependencyProperty Button8BrushProperty =
+            DependencyProperty.Register(nameof(Button8Brush), typeof(Brush), typeof(DefaultValues), new FrameworkPropertyMetadata(null));
     }
 }

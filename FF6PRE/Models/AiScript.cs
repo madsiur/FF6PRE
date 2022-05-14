@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
+using System.Text.Json;
 
 namespace FF6PRE.Models
 {
@@ -13,6 +15,11 @@ namespace FF6PRE.Models
         public List<Mnemonic> Mnemonics { get; set; }
 
         public string filePath { get; set; }
+
+        public AiScript()
+        {
+
+        }
 
         public AiScript(int id, JsonScript script, string filePath)
         {

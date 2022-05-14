@@ -21,6 +21,11 @@ namespace FF6PRE.Models
 
         public string Description { get; set; }
 
+        public Mnemonic()
+        {
+
+        }
+
         public Mnemonic(int id, string label, string mnemonicName, int type, string comment, JsonOperands jsonOperands)
         {
             this.Id = id;

@@ -22,96 +22,81 @@
         <Label Grid.Row="0" Content="{Binding Title, RelativeSource={RelativeSource AncestorType=UserControl}}" FontSize="16" VerticalContentAlignment="Center" />
         <DockPanel Grid.Row="1" LastChildFill="True">
             <Label Content="1:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand1, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button1Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand1, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button1Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value1, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue1, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="2" LastChildFill="True">
             <Label Content="2:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand2, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button2Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand2, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button2Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value2, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue2, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="3" LastChildFill="True">
             <Label Content="3:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand3, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button3Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand3, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button3Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value3, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue3, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="4" LastChildFill="True">
             <Label Content="4:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand4, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button4Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand4, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button4Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value4, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue4, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="5" LastChildFill="True">
             <Label Content="5:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand5, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button5Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand5, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button5Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value5, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue5, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="6" LastChildFill="True">
             <Label Content="6:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand6, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button6Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand6, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button6Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value6, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue6, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="7" LastChildFill="True">
             <Label Content="7:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand7, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button7Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand7, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button7Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value7, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue7, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>
         </DockPanel>
         <DockPanel Grid.Row="8" LastChildFill="True">
             <Label Content="8:" FontSize="16" HorizontalAlignment="Left" VerticalContentAlignment="Center" DockPanel.Dock="Left" />
-            <Button Height="26" Width="26" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
-                    Command="{Binding ButtonCommand8, RelativeSource={RelativeSource AncestorType=UserControl}}">
-                <Image Width="20" Height="20"
-                       Source="{Binding Button8Image, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}"/>
-            </Button>
-            <TextBox FontSize="16" Height="26" Margin="6,0,6,0"
+            <Button Style="{DynamicResource ButtonStyleDefaultValues}" Height="28" Width="28" HorizontalAlignment="Right" DockPanel.Dock="Right" Margin="0,0,6,0"
+                    Command="{Binding ButtonCommand8, RelativeSource={RelativeSource AncestorType=UserControl}}"
+                    Background="{Binding Button8Brush, TargetNullValue={x:Null}, RelativeSource={RelativeSource AncestorType=UserControl}}" />
+            <TextBox FontSize="16" Height="28" Margin="6,0,6,0"
                      Text="{Binding Value8, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      IsEnabled="{Binding IsEnabledValue8, RelativeSource={RelativeSource AncestorType=UserControl}}"
                      Style="{DynamicResource DefaultValuesTextBox}"/>

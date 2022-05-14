@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using System.Text.Json;
 using System.Windows;
 using static FF6PRE.Enums;
 
@@ -42,6 +43,12 @@ namespace FF6PRE
             {
                 MessageBox.Show("Operand value " + value + " is not a valid float.", "Operand value error", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        public static AiScript Clone<AiScript>(this AiScript source)
+        {
+            var serialized = JsonSerializer.Serialize(source);
+            return JsonSerializer.Deserialize<AiScript>(serialized);
         }
     }
 }
