@@ -18,7 +18,7 @@ This application require .NET Core 3.1. You can find the latest .NET Desktop Run
 ## Images
 ![AI Editor 1](/images/screenshot1.png)
 
-![AI Editor 2](/images/screenshot1.png)
+![AI Editor 2](/images/screenshot2.png)
 
 ## Questions, bugs, feedbacks
 If you have anything you want to ask me regarding this editor, please [open an issue](https://github.com/madsiur/FF6PRE/issues).
