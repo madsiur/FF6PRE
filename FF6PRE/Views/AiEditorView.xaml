@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:FF6PRE.Views"
              xmlns:uc="clr-namespace:FF6PRE.UC"
              mc:Ignorable="d" 
-             d:DesignHeight="800" d:DesignWidth="1000">
+             d:DesignHeight="800" d:DesignWidth="1200">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="250"/>
+                <ColumnDefinition Width="300"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0">
@@ -42,9 +42,20 @@
                     <RowDefinition Height="38" />
                 </Grid.RowDefinitions>
                 <Label Grid.Row="0" Content="Current script" FontSize="16" />
-                <DataGrid Grid.Row="1" VerticalAlignment="Stretch" Margin="6,0,6,2" AutoGenerateColumns="False"
+                <DataGrid Style="{DynamicResource AiDataGridStyle}" Grid.Row="1" VerticalAlignment="Stretch" Margin="6,0,6,2" AutoGenerateColumns="False"
                           ItemsSource="{Binding AiMnemonics, Mode=TwoWay}"
                           SelectedItem="{Binding CurrentAiMnemonic, Mode=TwoWay}">
+                    <DataGrid.CellStyle>
+                        <Style TargetType="{x:Type DataGridCell}">
+                            <Style.Triggers>
+                                <Trigger Property="IsSelected" Value="True">
+                                    <Setter Property="Background" Value="#FFB8B8B8"/>
+                                    <Setter Property="Foreground" Value="#FF000000"/>
+                                    <Setter Property="BorderBrush" Value="#FF787878"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </DataGrid.CellStyle>
                     <DataGrid.Columns>
                         <DataGridTextColumn Header="ID" Binding="{Binding Id}" IsReadOnly="True" Width="34" />
                         <DataGridTextColumn Header="Mnemonic" Binding="{Binding MnemonicName}" IsReadOnly="True" Width="180" />
@@ -53,21 +64,21 @@
                     </DataGrid.Columns>
                 </DataGrid>
                 <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,0,0" FontSize="16" Content="Clear script"
+                            Command="{Binding ClearScriptCommand}"/>
                     <Button Height="28" Padding="6,0,6,0" Margin="6,0,0,0" FontSize="16" Content="Restore script"
                             Command="{Binding RestoreScriptCommand}"/>
-                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,6,0" FontSize="16" Content="Insert new mnemonic"
+                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,0,0" FontSize="16" Content="Insert new mnemonic"
                             Command="{Binding AddMnemonicCommand}"/>
-                    <Button Height="28" Padding="6,0,6,0" Margin="0,0,6,0" FontSize="16"  Content="Delete current mnemonic"
+                    <Button Height="28" Padding="6,0,6,0" Margin="6,0,6,0" FontSize="16"  Content="Delete current mnemonic"
                             Command="{Binding DeleteMnemonicCommand}"/>
                 </StackPanel>
             </Grid>
         </Grid>
         <Grid Grid.Row="1">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="280" />
-                <ColumnDefinition />
-                <ColumnDefinition />
-                <ColumnDefinition />
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <Grid Grid.Column="0" Margin="4,0,4,0">
                 <Grid.RowDefinitions>
@@ -82,70 +93,22 @@
                     <RowDefinition />
                     <RowDefinition  Height="15"/>
                 </Grid.RowDefinitions>
-                <Label Grid.Row="1" Content="Mnemonic" FontSize="16" Margin="0,8,0,0" />
+                <Label Grid.Row="1" Content="Mnemonic" FontSize="16" Margin="0,0,0,0" />
                 <ComboBox Grid.Row="2" Height="28" Margin="6,0,6,0" FontSize="16"
                       ItemsSource="{Binding AvailableMnemonics}"
                       SelectedItem="{Binding CurrentMnemonicName, Mode=TwoWay}" />
-                <Label Grid.Row="3" Content="Type" FontSize="16" Margin="0,8,0,0" />
+                <Label Grid.Row="3" Content="Type" FontSize="16" Margin="0,0,0,0" />
                 <ComboBox Grid.Row="4" Height="28" Margin="6,0,6,0" FontSize="16"
                       ItemsSource="{Binding AvailableTypes}"
                       SelectedItem="{Binding CurrentType, Mode=TwoWay}" />
-                <Label Grid.Row="5" Content="Label" FontSize="16" Margin="0,8,0,0" />
+                <Label Grid.Row="5" Content="Label" FontSize="16" Margin="0,0,0,0" />
                 <TextBox Grid.Row="6" Height="28" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentLabel}" />
-                <Label Grid.Row="7" Content="Comment" FontSize="16" Margin="0,8,0,0" />
+                <Label Grid.Row="7" Content="Comment" FontSize="16" Margin="0,0,0,0" />
                 <TextBox Grid.Row="8" Height="28" Margin="6,0,6,0" FontSize="16" Text="{Binding CurrentComment}" />
             </Grid>
-            <uc:DefaultValues Grid.Column="1" Margin="4,0,4,0" Title="iValues"
-                              Value1="{Binding IValue1, Mode=TwoWay}" Value2="{Binding IValue2, Mode=TwoWay}"
-                              Value3="{Binding IValue3, Mode=TwoWay}" Value4="{Binding IValue4, Mode=TwoWay}"
-                              Value5="{Binding IValue5, Mode=TwoWay}" Value6="{Binding IValue6, Mode=TwoWay}"
-                              Value7="{Binding IValue7, Mode=TwoWay}" Value8="{Binding IValue8, Mode=TwoWay}"
-                              IsEnabledValue1="{Binding IsEnabledIValue1, Mode=TwoWay}" IsEnabledValue2="{Binding IsEnabledIValue2, Mode=TwoWay}"
-                              IsEnabledValue3="{Binding IsEnabledIValue3, Mode=TwoWay}" IsEnabledValue4="{Binding IsEnabledIValue4, Mode=TwoWay}"
-                              IsEnabledValue5="{Binding IsEnabledIValue5, Mode=TwoWay}" IsEnabledValue6="{Binding IsEnabledIValue6, Mode=TwoWay}"
-                              IsEnabledValue7="{Binding IsEnabledIValue7, Mode=TwoWay}" IsEnabledValue8="{Binding IsEnabledIValue8, Mode=TwoWay}"
-                              ButtonCommand1="{Binding IValue1ButtonClick, Mode=TwoWay}" ButtonCommand2="{Binding IValue2ButtonClick, Mode=TwoWay}"
-                              ButtonCommand3="{Binding IValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding IValue4ButtonClick, Mode=TwoWay}"
-                              ButtonCommand5="{Binding IValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding IValue6ButtonClick, Mode=TwoWay}"
-                              ButtonCommand7="{Binding IValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding IValue8ButtonClick, Mode=TwoWay}"
-                              Button1Brush="{Binding IValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding IValue2ButtonBrush, Mode=TwoWay}"
-                              Button3Brush="{Binding IValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding IValue4ButtonBrush, Mode=TwoWay}"
-                              Button5Brush="{Binding IValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding IValue6ButtonBrush, Mode=TwoWay}"
-                              Button7Brush="{Binding IValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding IValue8ButtonBrush, Mode=TwoWay}"/>
-            <uc:DefaultValues Grid.Column="2" Margin="4,0,4,0" Title="rValues"
-                              Value1="{Binding RValue1, Mode=TwoWay}" Value2="{Binding RValue2, Mode=TwoWay}"
-                              Value3="{Binding RValue3, Mode=TwoWay}" Value4="{Binding RValue4, Mode=TwoWay}"
-                              Value5="{Binding RValue5, Mode=TwoWay}" Value6="{Binding RValue6, Mode=TwoWay}"
-                              Value7="{Binding RValue7, Mode=TwoWay}" Value8="{Binding RValue8, Mode=TwoWay}"
-                              IsEnabledValue1="{Binding IsEnabledRValue1, Mode=TwoWay}" IsEnabledValue2="{Binding IsEnabledRValue2, Mode=TwoWay}"
-                              IsEnabledValue3="{Binding IsEnabledRValue3, Mode=TwoWay}" IsEnabledValue4="{Binding IsEnabledRValue4, Mode=TwoWay}"
-                              IsEnabledValue5="{Binding IsEnabledRValue5, Mode=TwoWay}" IsEnabledValue6="{Binding IsEnabledRValue6, Mode=TwoWay}"
-                              IsEnabledValue7="{Binding IsEnabledRValue7, Mode=TwoWay}" IsEnabledValue8="{Binding IsEnabledRValue8, Mode=TwoWay}"
-                              ButtonCommand1="{Binding RValue1ButtonClick, Mode=TwoWay}" ButtonCommand2="{Binding RValue2ButtonClick, Mode=TwoWay}"
-                              ButtonCommand3="{Binding RValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding RValue4ButtonClick, Mode=TwoWay}"
-                              ButtonCommand5="{Binding RValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding RValue6ButtonClick, Mode=TwoWay}"
-                              ButtonCommand7="{Binding RValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding RValue8ButtonClick, Mode=TwoWay}"
-                              Button1Brush="{Binding RValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding RValue2ButtonBrush, Mode=TwoWay}"
-                              Button3Brush="{Binding RValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding RValue4ButtonBrush, Mode=TwoWay}"
-                              Button5Brush="{Binding RValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding RValue6ButtonBrush, Mode=TwoWay}"
-                              Button7Brush="{Binding RValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding RValue8ButtonBrush, Mode=TwoWay}"/>
-            <uc:DefaultValues Grid.Column="3" Margin="4,0,4,0" Title="sValues"
-                              Value1="{Binding SValue1, Mode=TwoWay}" Value2="{Binding SValue2, Mode=TwoWay}"
-                              Value3="{Binding SValue3, Mode=TwoWay}" Value4="{Binding SValue4, Mode=TwoWay}"
-                              Value5="{Binding SValue5, Mode=TwoWay}" Value6="{Binding SValue6, Mode=TwoWay}"
-                              Value7="{Binding SValue7, Mode=TwoWay}" Value8="{Binding SValue8, Mode=TwoWay}"
-                              IsEnabledValue1="{Binding IsEnabledSValue1, Mode=TwoWay}" IsEnabledValue2="{Binding IsEnabledSValue2, Mode=TwoWay}"
-                              IsEnabledValue3="{Binding IsEnabledSValue3, Mode=TwoWay}" IsEnabledValue4="{Binding IsEnabledSValue4, Mode=TwoWay}"
-                              IsEnabledValue5="{Binding IsEnabledSValue5, Mode=TwoWay}" IsEnabledValue6="{Binding IsEnabledSValue6, Mode=TwoWay}"
-                              IsEnabledValue7="{Binding IsEnabledSValue7, Mode=TwoWay}" IsEnabledValue8="{Binding IsEnabledSValue8, Mode=TwoWay}"
-                              ButtonCommand1="{Binding SValue1ButtonClick, Mode=TwoWay}" ButtonCommand2="{Binding SValue2ButtonClick, Mode=TwoWay}"
-                              ButtonCommand3="{Binding SValue3ButtonClick, Mode=TwoWay}" ButtonCommand4="{Binding SValue4ButtonClick, Mode=TwoWay}"
-                              ButtonCommand5="{Binding SValue5ButtonClick, Mode=TwoWay}" ButtonCommand6="{Binding SValue6ButtonClick, Mode=TwoWay}"
-                              ButtonCommand7="{Binding SValue7ButtonClick, Mode=TwoWay}" ButtonCommand8="{Binding SValue8ButtonClick, Mode=TwoWay}"
-                              Button1Brush="{Binding SValue1ButtonBrush, Mode=TwoWay}" Button2Brush="{Binding SValue2ButtonBrush, Mode=TwoWay}"
-                              Button3Brush="{Binding SValue3ButtonBrush, Mode=TwoWay}" Button4Brush="{Binding SValue4ButtonBrush, Mode=TwoWay}"
-                              Button5Brush="{Binding SValue5ButtonBrush, Mode=TwoWay}" Button6Brush="{Binding SValue6ButtonBrush, Mode=TwoWay}"
-                              Button7Brush="{Binding SValue7ButtonBrush, Mode=TwoWay}" Button8Brush="{Binding SValue8ButtonBrush, Mode=TwoWay}"/>
+            <Grid Grid.Column="1" Margin="4,0,4,0">
+                <ContentControl Content="{Binding CurrentAiValVM}" />
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>

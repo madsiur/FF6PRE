@@ -1,15 +1,28 @@
-﻿using System;
+﻿using FF6PRE.Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using System.Text.Json;
 using System.Windows;
+using System.Windows.Media;
 using static FF6PRE.Enums;
 
 namespace FF6PRE
 {
     public static class Utils
     {
+        public static Brush redButtonBrush = new SolidColorBrush(Color.FromArgb(255, 200, 80, 80));
+        public static Brush greenButtonBrush = new SolidColorBrush(Color.FromArgb(255, 80, 200, 80));
+
+        public static SortedDictionary<int, string> AbilityKeyValues;
+
+        public static bool isActMnemonic(Mnemonic m)
+        {
+            AiMnemonic am = m.AiMnemon;
+            return am == AiMnemonic.Act || am == AiMnemonic.CounterAct || am == AiMnemonic.CounterActReceiveCommand ||
+                   am == AiMnemonic.FirstAttackAct || am == AiMnemonic.FinalAttackAct || am == AiMnemonic.CounterActAll;
+        }
 
         public static bool DirectoryExists(string path)
         {
@@ -33,16 +46,9 @@ namespace FF6PRE
             return true;
         }
 
-        public static void ShowOperandError(string value, OperandType type)
+        public static void showWarning(string message)
         {
-            if(type == OperandType.INT)
-            {
-                MessageBox.Show("Operand value " + value + " is not a valid integer.", "Operand value error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            else if (type == OperandType.FLOAT)
-            {
-                MessageBox.Show("Operand value " + value + " is not a valid float.", "Operand value error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+            MessageBox.Show(message, "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
         }
 
         public static AiScript Clone<AiScript>(this AiScript source)

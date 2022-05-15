@@ -1,0 +1,1603 @@
+1,Attack
+2,Defend
+3,Unlisted (Escape)
+4,Row
+5,Skip
+6,Trance
+7,Revert
+8,Steal
+9,Mug
+10,Throw
+11,Runic
+12,Sketch
+13,Control
+14,Slot
+15,Gil Toss
+16,Leap
+17,Mimic
+18,Pray
+19,Shock
+20,Possess
+21,Jump
+22,Jump (Fall)
+24,Tools
+31,<IC_WMGC>Cure
+32,<IC_WMGC>Cura
+33,<IC_WMGC>Curaga
+34,<IC_WMGC>Raise
+35,<IC_WMGC>Arise
+36,<IC_WMGC>Poisona
+37,<IC_WMGC>Esuna
+38,<IC_WMGC>Regen
+39,<IC_WMGC>Reraise
+40,<IC_BMGC>Fire
+41,<IC_BMGC>Blizzard
+42,<IC_BMGC>Thunder
+43,<IC_BMGC>Poison
+44,<IC_BMGC>Drain
+45,<IC_BMGC>Fira
+46,<IC_BMGC>Blizzara
+47,<IC_BMGC>Thundara
+48,<IC_BMGC>Bio
+49,<IC_BMGC>Firaga
+50,<IC_BMGC>Blizzaga
+51,<IC_BMGC>Thundaga
+52,<IC_BMGC>Break
+53,<IC_BMGC>Death
+54,<IC_BMGC>Holy
+55,<IC_BMGC>Flare
+56,<IC_BMGC>Gravity
+57,<IC_BMGC>Graviga
+58,<IC_BMGC>Banish
+59,<IC_BMGC>Meteor
+60,<IC_BMGC>Ultima
+61,<IC_BMGC>Quake
+62,<IC_BMGC>Tornado
+63,<IC_BMGC>Meltdown
+64,<IC_IMGC>Libra
+65,<IC_IMGC>Slow
+66,<IC_IMGC>Rasp
+67,<IC_IMGC>Silence
+68,<IC_IMGC>Protect
+69,<IC_IMGC>Sleep
+70,<IC_IMGC>Confuse
+71,<IC_IMGC>Haste
+72,<IC_IMGC>Stop
+73,<IC_IMGC>Berserk
+74,<IC_IMGC>Float
+75,<IC_IMGC>Imp
+76,<IC_IMGC>Reflect
+77,<IC_IMGC>Shell
+78,<IC_IMGC>Vanish
+79,<IC_IMGC>Hastega
+80,<IC_IMGC>Slowga
+81,<IC_IMGC>Osmose
+82,<IC_IMGC>Teleport
+83,<IC_IMGC>Quick
+84,<IC_IMGC>Dispel
+88,Ramuh
+89,Kirin
+90,Siren
+91,Cait Sith
+92,Ifrit
+93,Shiva
+94,Unicorn
+95,Maduin
+96,Catoblepas
+97,Phantom
+98,Carbuncle
+99,Bismarck
+100,Golem
+101,Zona Seeker
+102,Seraph
+103,Quetzalli
+104,Quetzalli (Fall)
+105,Fenrir
+106,Valigarmanda
+107,Midgardsormr
+108,Lakshmi
+109,Alexander
+110,Phoenix
+111,Odin
+112,Bahamut
+113,Ragnarok
+114,Crusader
+115,Raiden
+124,Fang – 牙
+125,Sky – 空
+126,Tiger – 虎
+127,Flurry – 舞
+128,Dragon – 龍
+129,Eclipse – 月
+130,Tempest – 烈
+131,Oblivion – 断
+132,Raging Fist
+133,Aura Cannon
+134,Meteor Strike
+135,Rising Phoenix
+136,Chakra
+137,Razor Gale
+138,Soul Spiral
+139,Phantom Rush
+140,<IC_LMGC>Doom
+141,<IC_LMGC>Roulette
+142,<IC_LMGC>Tsunami
+143,<IC_LMGC>Aqua Breath
+144,<IC_LMGC>Aero
+145,<IC_LMGC>1000 Needles
+146,<IC_LMGC>Mighty Guard
+147,<IC_LMGC>Revenge Blast
+148,<IC_LMGC>White Wind
+149,<IC_LMGC>Lv. 5 Death
+150,<IC_LMGC>Lv. 4 Flare
+151,<IC_LMGC>Lv. 3 Confuse
+152,<IC_LMGC>Reflect ???
+153,<IC_LMGC>Lv. ? Holy
+154,<IC_LMGC>Traveler
+155,<IC_LMGC>Force Field
+156,<IC_LMGC>Dischord
+157,<IC_LMGC>Bad Breath
+158,<IC_LMGC>Transfusion
+159,<IC_LMGC>Rippler
+160,<IC_LMGC>Stone
+161,<IC_LMGC>Quasar
+162,<IC_LMGC>Grand Delta
+163,<IC_LMGC>Self-Destruct
+164,Wind Rhapsody
+165,Forest Nocturne
+166,Desert Lullaby
+167,Love Serenade
+168,Earth Blues
+169,Water Harmony
+170,Twilight Requiem
+171,Snowman Rondo
+172,Wind Slash
+173,Sunbath
+174,Leaf Swirl
+175,Forest Healing
+176,Sandstorm
+177,Antlion
+178,Will o' the Wisp
+179,Apparition
+180,Rock Slide
+181,Sonic Boom
+182,El Niño
+183,Plasma
+184,Snare
+185,Cave-In
+186,Snowball
+187,Avalanche
+188,Cockatrice
+189,Wombat
+190,Meercat
+191,Tapir
+192,Boar Brigade
+193,Raccoon
+194,Poisonous Frog
+195,Arctic Hare
+196,<IC_SCR>Flame Scroll
+197,<IC_SCR>Water Scroll
+198,<IC_SCR>Lightning Scroll
+199,Snowstorm
+200,Slam
+201,Slam
+205,Chainsaw (Death)
+206,Chainsaw (Attack)
+210,Mysidian Rabbit
+211,Chocobo Stampede
+212,Dive Bomb
+213,Prismatic Flash
+214,Summon
+215,Joker's Death
+216,Joker's Death
+218,Fire Beam
+219,Thunder Beam
+220,Ice Beam
+221,Bio Blast
+222,Healing Force
+223,Confuser
+224,Banisher
+225,Magitek Missile
+226,Takedown
+227,Wild Fang
+228,Riot Blade
+229,Mirage Dive
+230,Tsubame Gaeshi
+231,Shadow Fang
+232,Royal Shock
+233,Tiger Break
+234,Spinning Edge
+235,Saber Soul
+236,Star Prism
+237,Red Card
+238,Moogle Rush
+239,Punishing Meteor
+240,Evasion +10% (Falchion & Murasame)
+241,Ragnarok
+242,Shell
+243,Protect
+244,MP+12.5%
+245,HP+12.5%
+246,<unknown>
+247,<unknown>
+248,<unknown>
+249,<unknown>
+250,<unknown>
+251,<unknown>
+252,<unknown>
+253,<unknown>
+254,<unknown>
+255,Incorrect blitz command input!
+256,10% Magic Evasion
+257,20% Magic Evasion
+258,30% Magic Evasion
+259,50% Magic Evasion
+261,Sky – 空
+262,Dance (Stumble)
+263,(No Casting) Fire
+264,(No Casting) Blizzard
+265,(No Casting) Thunder
+266,(No Casting) Break
+267,(No Casting) Death
+268,(No Casting) Holy
+269,(No Casting) Flare
+270,(No Casting) Stop
+271,(No Casting) Wind Slash
+272,(No Casting) Fira
+273,(No Casting) Blizzara
+274,(No Casting) Thundara
+275,(No Casting) Poison
+276,(No Casting) Gravity
+277,<IC_BMGC>Fira
+278,<IC_BMGC>Blizzara
+279,<IC_BMGC>Thundara
+280,<IC_BMGC>Poison
+281,<IC_BMGC>Holy
+282,<IC_BMGC>Graviga
+283,<IC_BMGC>Firaga
+284,<IC_BMGC>Blizzaga
+285,<IC_BMGC>Thundaga
+286,HP+25%
+287,MP+25%
+288,HP+50%
+289,MP+50%
+290,Raise?
+291,Halves MP Cost
+292,MP Cost Set to 1
+300,Imp Song
+302,Venomist
+303,Crypt Dust
+304,Scintillation
+305,Lullaby
+306,Acid Rain
+308,Mega Berserk
+309,Silence
+310,Net
+311,Sticky Goo
+312,Delta Attack
+313,Entangle
+314,Blaster
+315,Cyclonic
+316,Fireball
+317,Atomic Ray
+318,Magitek Laser
+319,Diffractive Laser
+320,Wave Cannon
+321,Megavolt
+322,Gigavolt
+323,Snowstorm
+324,Absolute Zero
+325,Magnitude 8
+326,Leech
+327,Flash Rain
+328,Magitek Barrier
+329,Heartless Angel
+330,Barrier Change
+331,Flee
+332,50 Gs
+333,Mind Blast
+334,Northern Cross
+335,Flare Star
+336,Overture
+337,Grab
+338,Reverse Polarity
+339,Targeting
+340,Snort
+341,Southern Cross
+342,Launcher
+343,Entice
+344,Freezing Dust
+345,Tentacle
+346,Hyperdrive
+347,Trine
+348,Diabolic Whistle
+349,Gravity Bomb
+350,Inhale
+351,Disaster
+352,Metal Cutter
+353,Bomblet
+354,Digestive Fluid
+355,Fury
+356,Release
+357,Cloudy Heaven
+358,Missile
+359,Forsaken
+360,Meteor
+361,Vengeance
+362,Poltergeist
+363,Dread Gaze
+364,Shockwave
+365,Blaze
+366,Soul Extraction
+367,Gale Cut
+368,Shamshir
+369,Hailstone
+370,Saintly Beam
+371,Humbaba Breath
+372,Lifeshaver
+373,Dancing Flame
+374,Landslide
+377,Critical
+378,Counterattack
+379,Axe
+380,Stealth
+381,Slay
+382,Zombie Touch
+383,Wheel
+384,Eye for an Eye
+385,Unseen Strike
+386,Eyeshadow
+387,Spinning Umbrella
+388,Punch
+389,Silencing Touch
+390,Hit
+392,Insanitouch
+393,Moldy Bone
+394,Desperate Strike
+395,Maul
+396,Bite
+397,Neck Scratch
+398,Rush
+399,Slam
+400,Incisors
+401,Cat Scratch
+402,Chomp
+403,Bite
+404,Bear Claw
+405,Pounce
+406,Claw
+407,Yawn
+408,Romp
+409,Beatdown
+410,Tongue Lash
+411,Wing
+412,Bone
+413,Dissolve
+414,Spin
+415,Bite
+416,Dive
+417,Featherdust
+418,Eye Gouge
+419,Talon Grab
+420,Rock
+421,Program 18
+422,Iron Stinger
+423,Wing Snap
+424,Slam
+425,Scythe
+426,Poison Touch
+427,Poison Seed
+428,Eye Gouge
+429,Life Drain
+430,Poison Barb
+431,Bare Knuckles? (Siegfried)
+432,Ink
+433,Pincer
+434,Garrote
+435,Tongue
+436,Imp Gaze
+437,Lick
+438,Crush
+439,Silver Lance
+441,Program 55
+442,Metal Kick
+443,Reverse Thruster
+444,Supersonic Wave
+445,Metal Arm
+446,Cling
+447,Sapping Ooze
+448,Glare
+449,Hug
+450,Smirk
+451,Brainstorm
+452,Mindprick
+453,Wrench
+454,Sickle
+455,Poison Kiss
+456,Electrode
+457,Mysterious Dance (Veil Dancer)
+458,Headbutt
+459,Knife
+460,Silencing Touch
+461,Venom
+462,Rage
+463,Numbspines
+464,Time Freeze
+465,Feeler
+466,Tail
+467,Numb
+468,Clamp
+469,Clamp
+470,Sapping Touch
+471,Drool
+472,Digestive Fluid
+473,Forty Winks
+474,Charge
+475,Swing
+476,Bio Attack
+477,Disappear
+478,Zombie Touch
+479,Magic Drain
+480,Blinding Touch
+481,Parasol
+482,Knee Kick
+483,Swipe
+484,Sapping Touch
+485,Mysterious Dance (Cloudwraith)
+486,Rib
+487,Bite
+488,Tail
+489,Incisors
+490,Choke
+491,Poison Strike
+492,Incisors
+493,Pounce
+494,Rabies
+495,Bite
+496,Gore
+497,Tackle
+498,Carapace
+499,Yawn
+500,Rampage
+501,Sleeping Gas
+502,Chomp
+503,Wing Sap
+504,Bone
+505,Tail
+506,Heave
+507,Venom Claw
+508,Beak
+509,Osmose Beak
+510,Silencing Strike
+511,Talon
+512,Rock
+513,Crazed Signal
+514,Sleepsting
+515,Wing Snap
+516,Ram
+517,Drainsickle
+518,Poison Touch
+519,Deadly Pollen
+520,Direct Hit
+521,Negatouch
+522,Numbclaw
+523,Anchor
+524,Shell Slam
+525,Pincer
+526,Croak
+527,Stone Gaze
+528,Lick
+529,Constrict
+530,Golden Lance
+531,Ram
+532,Dash
+533,Metal Knuckles
+534,Program 17
+535,Gamma Rays
+536,Cling
+537,Sleep
+538,Glare
+539,Stench
+540,Slime
+541,Dreamland
+542,Mythril Wrench
+543,Mad Sickle
+544,Mesmerize
+545,Sap Seed
+546,Hypno Gas
+547,Blood Dance
+548,Throat Jab
+549,Slam
+550,Scratch
+551,Mind Stop
+552,Poison Tail
+553,Dreamstinger
+554,Imp Touch
+555,Clamp
+556,Rod
+557,Infernal Kiss
+558,Digestive Fluid
+559,Corkscrew
+560,Sapping Touch
+561,Dead End
+562,Smirk
+563,Dispatch
+564,Slap
+565,Whirling Umbrella
+566,Sapping Touch
+567,Cursed Gaze
+568,Gut Strike
+569,Carrot
+570,Fallen Footsteps
+571,Switchblade
+572,Friendmaker
+573,Program 65
+574,Rage
+575,Tail
+576,Face Chomp
+577,Program 95
+578,Beak
+579,Peck
+580,Hug
+581,Cling
+582,Wing Snap
+583,Bacteria
+584,Mind Reaper
+585,Growl
+586,Bear Hug
+587,Bone Powder
+588,Claw
+589,Crystal Lance
+590,Wing
+591,Megashock
+592,Mindshock
+593,Gunk
+594,Figaro Malt
+595,Clobber
+596,Flare Up
+597,Golden Wrench
+598,Haymaker
+599,Lethal Sting
+600,Incinerate
+601,Propeller
+602,Counterattack
+603,Insanitouch
+604,Beak
+605,Wheel
+606,Stone Sting
+607,Feeler
+608,Double Arm
+609,Featherdust
+610,Flap
+611,Parallout
+612,Stonetouch
+613,Nickel Wrench
+614,Booty Shake
+615,Zombie Stick
+616,Uppercut
+617,Slam
+618,Scratch
+619,Gouge
+620,Brainblast
+621,Slam
+622,Venom Tusk
+623,Frenzy
+624,Critical
+625,Mind Stop
+626,Destroy
+627,Crush
+628,Knife
+629,Metal Punch
+630,Doom Fist
+631,Drill
+632,Drill
+633,Wheel
+634,Sweepkick
+635,Overflow
+636,Blood Feast
+637,Sobat
+638,Wrecking Ball
+639,Wrecking Ball
+640,Tackle
+641,Tackle
+642,Ink
+643,Full Power
+644,Devil Claw
+645,Stun
+646,Morning Star
+647,Venom Claw
+648,Last Kiss
+649,Doom Strike
+650,Assassin Blade
+651,Poison Claw
+652,Fiendish Rage
+653,Tyrfing
+654,Havoc Wing
+655,Ink
+656,Ink
+657,Ink
+658,Slime
+659,Petriblast
+660,Knife
+661,Stun
+662,Stun
+663,Stun
+664,Rapier
+665,Slash
+666,Rapier
+667,Slash
+668,Wing Saber
+669,Honed Tusk
+670,Claw
+671,Axe
+672,Eraser
+673,Bite
+674,Lightning
+675,Razor Gale
+676,Blood Claw
+677,Sapping Strike
+678,Zombie Fang
+679,10-Hit Combo
+680,Repose
+681,Repose
+682,Confuse Claw
+683,Zombie Claw
+684,Mega Claw
+685,Program 35
+686,Magic Drain
+687,Octopus Ink
+688,Solar Plexus
+689,Solar Plexus
+690,Solar Plexus
+691,Solar Plexus
+692,Axe
+693,Steal (Enemy)
+694,Gil Toss
+695,Mug (Harvester)
+696,Inaction
+701,<unknown>
+702,<unknown>
+703,<unknown>
+704,<unknown>
+705,<unknown>
+706,<unknown>
+707,<unknown>
+708,Summon Iron Fists (Dadaluma)
+709,Summon Stunners (Goetia)
+710,Summon Stunners (Goetia)
+711,Summon Ifrit (Shiva)
+712,Summon Shiva (Ifrit)
+713,Respawn (Left Blade)
+714,Respawn (Right Blade)
+715,Bomblet
+716,Bomblet
+717,Bomblet
+718,Bomblet
+719,Bomblet
+720,Summon Typhon (Ultros)
+721,Summon Bit (Air Force)
+722,<unknown>
+723,<unknown>
+724,Respawn (Soul Saver)
+725,Respawn (Soul Saver)
+726,Summon Erebus (Hidon)
+727,Summon Rahu (Ketu)
+728,Summon Ketu (Rahu)
+729,<unknown>
+730,"""Focusing energy."" (Ultima Weapon)"
+731,Green Cherry (Yeti)
+732,"""Samurai Soul's power increases!"" (Image, Reflect)"
+733,<unknown>
+734,<unknown>
+735,<unknown>
+736,Targeting? (Vargas)
+737,Invincibility
+738,Reappear (Ymir)
+739,Reappear (Ymir)
+740,<IC_NIF>Mythril Knife
+741,<IC_NIF>Dagger
+742,<IC_NIF>Main Gauche
+743,<IC_NIF>Air Knife
+744,<IC_NIF>Thief's Knife
+745,<IC_NIF>Assassin's Dagger
+746,<IC_SRK>Shuriken
+747,<IC_SRK>Fuma Shuriken
+748,<IC_NSRD>Enhancer
+749,<IC_NSRD>Crystal Sword
+750,<IC_KTN>Ashura
+751,<IC_NIF>Kunai
+752,<IC_NIF>Kodachi
+753,<IC_KTN>Kotetsu
+754,<IC_NIF>Sakura
+755,<IC_KTN>Kikuichimonji
+756,<IC_NIF>Sasuke
+757,<IC_KTN>Kazekiri
+758,<IC_NIF>Ichigeki
+759,<IC_KTN>Murasame
+760,<IC_DRAG>Hi-Potion
+761,<IC_DRAG>Potion
+762,Skip
+763,<IC_BAG>Remedy
+764,<IC_DRAG>Ether
+765,<IC_DRAG>Elixir
+766,<IC_DRAG>Hi-Ether
+767,<IC_BAG>Gold Needle
+768,Summon Imperial Soldier (Satellite)
+769,Summon Imperial Soldier (Satellite)
+770,Summon Imperial Soldier (Satellite)
+771,<unknown>
+772,<unknown>
+773,Summon Trapper (Chaser)
+774,<unknown>
+775,<unknown>
+776,Withdraw (Ymir)
+777,<IC_BMGC>Fira or <IC_BMGC>Firaga
+778,Attack
+779,Inaction (Variable Calculation)
+800,Guard
+801,Imperial Soldier
+802,Templar
+803,Ninja
+804,Samurai
+805,Borghese
+806,Magna Roader
+807,Yojimbo
+808,Cloud
+809,Misty
+810,Al Jabr
+811,Zaghrem
+812,Apocrypha
+813,Dark Force
+814,Angel Whisper
+815,Oversoul
+816,Skeletal Horror
+817,Commander
+818,Mu
+819,Wererat
+820,Mugbear
+821,Belmodar
+822,Muud Suud
+823,Leaf Bunny
+824,Stray Cat
+825,Silver Lobo
+826,Doberman
+827,Megalodoth
+828,Fidor
+829,Briareus
+830,Suriander
+831,Chimera
+832,Behemoth
+833,Fafnir
+834,Lesser Lopros
+835,Fossil Dragon
+836,Holy Dragon
+837,Fiend Dragon
+838,Brachiosaur
+839,Tyrannosaur
+840,Darkwind
+841,Aepyornis
+842,Vulture
+843,Vasegiatta
+844,Zokka
+845,Trapper
+846,Hornet
+847,Nettlehopper
+848,Delta Beetle
+849,Killer Mantis
+850,Trillium
+851,Rafflesia
+852,Tumbleweed
+853,Vampire Thorn
+854,Cartagra
+856,Nautiloid
+857,Exocite
+858,Anguiform
+859,Leap Frog
+860,Lizard
+861,Litwor Chicken
+862,Slagworm
+863,Hell's Rider
+865,Onion Knight
+866,Magitek Armor
+867,Sky Armor
+868,Satellite
+869,Armored Weapon
+870,Spritzer
+871,Flan
+872,Outcast
+873,Humpty
+874,Brainpan
+875,Cruller
+876,Cactuar
+877,Bandit
+878,Harvester
+879,Bomb
+880,Still Life
+881,Lunatys
+882,Veil Dancer
+883,Hill Gigas
+884,Tonberry
+885,Magic Urn
+886,Mover
+887,Figaro Lizard
+888,Devoahan
+889,Aspiran
+890,Ghost
+891,Crawler
+892,Sand Ray
+893,Alacran
+894,Actinian
+895,Sandhorse
+896,Darkside
+897,Malboro
+898,Urok
+899,Foper
+900,Guard Leader
+901,Corporal
+902,General
+903,Covert
+904,Kamui
+905,Warlock
+906,Cherry
+907,Joker
+908,Iron Fist
+909,Devil
+910,Provoker
+911,Cloudwraith
+912,Mahadeva
+913,Vector Hound
+914,Peeper
+915,Stunner
+916,Sorath
+917,Destroyer
+918,Chippirabbit
+919,Coeurl Cat
+920,Bloodfang
+921,Hunting Hound
+922,Gorgias
+923,Don
+924,Murussu
+925,Wartpuck
+926,Gorgimera
+927,Behemoth King
+928,Vector Lythos
+929,Wyvern
+930,Zombie Dragon
+931,Dragon
+932,Primeval Dragon
+933,Weredragon
+934,Cirpius
+935,Sprinter
+936,Lenergia
+937,Marchosias
+938,Gloomwind
+939,Dropper
+940,Rock Wasp
+941,Grasswyrm
+942,Luridan
+943,Twinscythe
+944,Paraladia
+945,Exoray
+946,Crusher
+947,Ouroboros
+948,Acrophies
+949,Schmidt
+950,Devourer
+951,Cancer
+952,Gigantoad
+953,Basilisk
+954,Medusa Chicken
+955,Landworm
+956,Test Rider
+957,Pluto Armor
+958,Onion Dasher
+959,Heavy Armor
+960,Chaser
+961,Gamma
+962,Poplium
+963,Intangir
+964,Misfit
+965,Creature
+966,Enuo
+967,Deepeye
+968,Unseelie
+969,Neck Hunter
+970,Grenade
+971,Alluring Rider
+972,Pandora
+973,Blade Dancer
+974,Gigantos
+975,Magna Roader
+976,Lycaon
+977,Parasite
+978,Land Ray
+979,Antares
+980,Anemone
+981,Moonform
+982,Specter
+983,Great Malboro
+984,Bonnacon
+985,Oceanus
+986,Living Dead
+988,Face
+989,Outsider
+990,Coco
+991,Zeveak
+992,Nightwalker
+993,Demon Knight
+994,Imperial Elite
+995,Desert Hare
+996,Wizard
+997,Devil Fist
+998,Illuyankas
+999,Sergeant
+1000,Aspidochelon
+1001,Knotty
+1002,Luna Wolf
+1003,Belzecue
+1004,Caladrius
+1005,Tzakmaqiel
+1006,Lukhavi
+1007,Eukaryote
+1008,Land Grillon
+1009,Goetia
+1010,Greater Mantis
+1011,Bogy
+1012,Purusa
+1013,Black Dragon
+1014,Adamankary
+1015,Dante
+1016,Platinum Dragon
+1017,Duel Armor
+1018,Psychos
+1019,Mousse
+1020,Shambling Corpse
+1021,Punisher
+1022,Balloon
+1023,Gobbledygook
+1024,Great Behemoth
+1025,Scorpion
+1026,Chaos Dragon
+1027,Spitfire
+1028,Vector Chimera
+1029,Lich
+1030,Rukh
+1031,Magna Roader
+1032,Bug
+1033,Seaflower
+1034,Fortis
+1035,Venobennu
+1036,Galypdes
+1037,Junk
+1038,Mandrake
+1039,Valeor
+1040,Amduscias
+1041,Necromancer
+1042,Glasya Labolas
+1043,Magna Roader
+1044,Wild Rat
+1045,Gold Bear
+1046,InnoSent
+1047,Clymenus
+1048,Garm
+1049,Daedalus
+1050,Baalzephon
+1051,Ahriman
+1052,Death Machine
+1053,Metal Hitman
+1054,Io
+1055,Skip
+1056,Attack or Attack or Inaction
+1057,<IC_DRAG>Potion or <IC_DRAG>Hi-Potion
+1058,Sunbath or Arctic Hare or <IC_IMGC>Libra
+1059,<IC_BMGC>Fire or Fireball or Inaction
+1060,<IC_BMGC>Fire or Fireball or Fireball
+1061,Pincer or Pincer or Inaction
+1062,Zombie Touch or Zombie Touch or Inaction
+1063,Zombie Touch or Inaction or Inaction
+1064,Snowstorm or Fireball or Gigavolt
+1065,Magnitude 8 or <IC_LMGC>Aqua Breath or Gigavolt
+1066,Magnitude 8 or Snowstorm or Fireball
+1067,<IC_BAG>Remedy or <IC_DRAG>Ether
+1068,Flee or Inaction or Inaction
+1069,<IC_DRAG>Hi-Potion or <IC_DRAG>Elixir
+1070,<IC_DRAG>Ether or <IC_DRAG>Hi-Ether
+1071,<IC_WMGC>Raise or <IC_WMGC>Raise or <IC_WMGC>Arise
+1072,<IC_BMGC>Flare or <IC_BMGC>Flare or Inaction
+1073,<IC_BMGC>Firaga or <IC_BMGC>Blizzaga or <IC_BMGC>Thundaga
+1074,<IC_BMGC>Death or <IC_IMGC>Silence or <IC_BMGC>Bio
+1075,<IC_BMGC>Holy or <IC_BMGC>Holy or Inaction
+1076,<IC_BMGC>Holy or Inaction or Inaction
+1077,Wind Slash or Attack or Inaction
+1078,Northern Cross or Flare Star or Attack
+1079,Dissolve or Dissolve or Inaction
+1080,<IC_WMGC>Cura or <IC_WMGC>Reraise or <IC_IMGC>Protect
+1081,Blinding Touch or Blinding Touch or Inaction
+1082,<IC_WMGC>Esuna or <IC_WMGC>Cura or <IC_IMGC>Shell
+1083,<IC_WMGC>Regen or <IC_WMGC>Esuna or <IC_IMGC>Haste
+1084,Lifeshaver or Lifeshaver or Inaction
+1085,Blaster or Inaction or Inaction
+1086,<IC_NIF>Mythril Knife or <IC_KTN>Ashura
+1087,<IC_BMGC>Poison or <IC_BMGC>Drain or <IC_BMGC>Bio
+1088,<IC_IMGC>Dispel or Inaction or Inaction
+1089,Repose or Inaction or Inaction
+1090,Havoc Wing or Trine or Vengeance
+1091,Havoc Wing or Inaction or Inaction
+1092,Havoc Wing or Havoc Wing or Inaction
+1093,<unknown>
+1094,Remove Unselectable from Vargas (Ipooh)
+1095,<unknown>
+1096,<unknown>
+1097,Gigavolt
+1098,<IC_BMGC>Firaga
+1099,<IC_BMGC>Firaga
+1100,<IC_IMGC>Reflect
+1101,Inaction (Variable Calculation)
+1102,Inaction (Variable Calculation)
+1103,Inaction (Variable Calculation)
+1104,Inaction (Variable Calculation)
+1105,Inaction (Variable Calculation)
+1106,Boss Phase Switch
+1107,Boss Phase Switch
+1108,Boss Phase Switch
+1109,Inaction (Variable Calculation)
+1110,<unknown>
+1111,Inaction (Variable Calculation)
+1112,Inaction (Variable Calculation)
+1113,Inaction (Variable Calculation)
+1114,Inaction (Variable Calculation)
+1115,Inaction (Variable Calculation)
+1116,Inaction (Variable Calculation)
+1117,Inaction (Variable Calculation)
+1118,Inaction (Variable Calculation)
+1119,Inaction (Variable Calculation)
+1120,Inaction (Variable Calculation)
+1121,Inaction (Variable Calculation)
+1122,Inaction (Variable Calculation)
+1123,Inaction (Variable Calculation)
+1124,Inaction (Variable Calculation)
+1125,Inaction (Variable Calculation)
+1126,Inaction (Variable Calculation)
+1127,Inaction (Variable Calculation)
+1128,Inaction (Variable Calculation)
+1129,Inaction (Variable Calculation)
+1130,Inaction (Variable Calculation)
+1131,Inaction (Variable Calculation)
+1132,Tentacle
+1133,<IC_WMGC>Cure
+1134,<IC_WMGC>Cura
+1135,<IC_WMGC>Esuna
+1136,<IC_BMGC>Thundaga
+1137,<IC_IMGC>Reflect
+1138,Boss Phase Switch
+1139,Boss Phase Switch
+1140,Inaction (Variable Calculation)
+1141,Attack (Variable Calculation)
+1142,Attack or Ink or Tentacle
+1143,Tentacle
+1144,Tentacle
+1145,Inaction (Variable Calculation)
+1146,Inaction (Variable Calculation)
+1147,Inaction (Variable Calculation)
+1148,Inaction (Variable Calculation)
+1149,Inaction (Variable Calculation)
+1150,Inaction (Variable Calculation)
+1151,Inaction (Variable Calculation)
+1152,Inaction (Variable Calculation)
+1153,Inaction (Variable Calculation)
+1154,Inaction (Variable Calculation)
+1155,Inaction (Variable Calculation)
+1156,<IC_IMGC>Haste
+1157,<IC_IMGC>Hastega
+1158,<IC_WMGC>Reraise
+1159,<IC_IMGC>Reflect
+1160,<IC_IMGC>Protect
+1161,<IC_IMGC>Shell
+1162,<unknown>
+1163,Inaction (Variable Calculation)
+1164,Inaction (Variable Calculation)
+1165,Inaction (Variable Calculation)
+1166,Attack or Ink or Tentacle
+1167,Magnitude 8 or <IC_LMGC>Aqua Breath or Magnitude 8
+1168,<IC_IMGC>Protect
+1169,Inaction (Variable Calculation)
+1170,Inaction (Variable Calculation)
+1171,Inaction (Variable Calculation)
+1172,Inaction (Variable Calculation)
+1173,Inaction (Variable Calculation)
+1174,Inaction (Variable Calculation)
+1175,Inaction (Variable Calculation)
+1176,Inaction (Variable Calculation)
+1177,Inaction (Variable Calculation)
+1178,Inaction (Variable Calculation)
+1179,Inaction (Variable Calculation)
+1180,Inaction (Variable Calculation)
+1181,Inaction (Variable Calculation)
+1182,Inaction (Variable Calculation)
+1183,Inaction (Variable Calculation)
+1184,Inaction (Variable Calculation)
+1185,Inaction (Variable Calculation)
+1186,<IC_IMGC>Dispel
+1187,<IC_WMGC>Esuna
+1188,Inaction (Variable Calculation)
+1189,Inaction (Variable Calculation)
+1190,Inaction (Variable Calculation)
+1191,Attack (Variable Calculation)
+1192,Attack (Variable Calculation)
+1193,Attack (Variable Calculation)
+1194,Attack (Variable Calculation)
+1195,Attack (Variable Calculation)
+1196,Attack (Variable Calculation)
+1197,Attack (Variable Calculation)
+1198,Attack (Variable Calculation)
+1199,Inaction (Variable Calculation)
+1200,Inaction (Variable Calculation)
+1201,Inaction (Variable Calculation)
+1202,Inaction (Variable Calculation)
+1203,Inaction (Variable Calculation)
+1204,Inaction (Variable Calculation)
+1205,Inaction (Variable Calculation)
+1206,Inaction (Variable Calculation)
+1207,<IC_BMGC>Fire
+1208,<IC_BMGC>Fira
+1209,<IC_BMGC>Firaga
+1210,<unknown>
+1211,Inaction (Variable Calculation)
+1212,Inaction (Variable Calculation)
+1213,Inaction (Variable Calculation)
+1214,Inaction (Variable Calculation)
+1215,Inaction (Variable Calculation)
+1216,Inaction (Variable Calculation)
+1217,Inaction (Variable Calculation)
+1218,Inaction (Variable Calculation)
+1219,<IC_LMGC>Reflect ???
+1220,<IC_BMGC>Blizzara
+1221,Absolute Zero
+1222,Inaction (Variable Calculation)
+1223,<IC_WMGC>Cura
+1224,Snowstorm
+1225,Megavolt
+1226,<IC_BMGC>Fira or <IC_BMGC>Fira or Fireball
+1227,<IC_BMGC>Flare or <IC_BMGC>Firaga or <IC_BMGC>Flare
+1228,<IC_BMGC>Firaga
+1229,<IC_BMGC>Blizzaga
+1230,Tentacle
+1231,Octopus Ink
+1232,Tentacle
+1233,Tentacle
+1234,<IC_WMGC>Reraise
+1235,<IC_BMGC>Fire
+1236,<IC_BMGC>Fira
+1237,<IC_BMGC>Firaga
+1238,<IC_WMGC>Cura
+1239,<IC_IMGC>Haste
+1240,Missile
+1241,Inaction (Variable Calculation)
+1242,Inaction (Variable Calculation)
+1243,Inaction (Variable Calculation)
+1244,Inaction (Variable Calculation)
+1245,Inaction (Variable Calculation)
+1246,Inaction (Variable Calculation)
+1247,Inaction (Variable Calculation)
+1248,Inaction (Variable Calculation)
+1249,Summon Onion Knight (Chaser)
+1250,Wing
+1251,Fireball
+1252,Pincer
+1253,Ink
+1254,<IC_BMGC>Thunder
+1255,<IC_BMGC>Thundara
+1256,<IC_IMGC>Slow
+1257,<IC_LMGC>Rippler
+1258,Inaction (Variable Calculation)
+1259,<IC_IMGC>Imp
+1260,<IC_BMGC>Fire or Inaction or <IC_BMGC>Fire
+1261,<IC_BMGC>Fira
+1262,Inaction (Variable Calculation)
+1263,<IC_BMGC>Blizzara
+1264,<IC_BMGC>Holy
+1265,Tentacle
+1266,Tentacle
+1267,Inaction (Variable Calculation)
+1268,Inaction (Variable Calculation)
+1269,Inaction (Variable Calculation)
+1270,Inaction (Variable Calculation)
+1271,Inaction (Variable Calculation)
+1272,Inaction (Variable Calculation)
+1273,Inaction (Variable Calculation)
+1274,Inaction (Variable Calculation)
+1275,Inaction (Variable Calculation)
+1276,Inaction (Variable Calculation)
+1277,Inaction (Variable Calculation)
+1278,Inaction (Variable Calculation)
+1279,Inaction (Variable Calculation)
+1280,"<IC_BMGC>Firaga, <IC_BMGC>Firaga"
+1281,"<IC_BMGC>Blizzaga, <IC_BMGC>Blizzaga"
+1282,"<IC_BMGC>Thundaga, <IC_BMGC>Thundaga"
+1283,"<IC_BMGC>Death, <IC_BMGC>Death"
+1284,"<IC_IMGC>Silence, <IC_IMGC>Silence"
+1285,"<IC_BMGC>Bio, <IC_BMGC>Bio"
+1286,Attack or Attack or Wheel
+1287,Diabolic Whistle
+1288,<IC_DRAG>Hi-Potion
+1289,<IC_WMGC>Cura or <IC_IMGC>Reflect or <IC_IMGC>Haste
+1290,<IC_BMGC>Fire or <IC_BMGC>Fira or <IC_BMGC>Firaga
+1291,<IC_IMGC>Reflect
+1292,Mega Berserk
+1293,Attack (Variable Calculation)
+1294,Attack (Variable Calculation)
+1295,Attack (Variable Calculation)
+1296,Attack (Variable Calculation)
+1297,Attack (Variable Calculation)
+1298,Attack (Variable Calculation)
+1299,Attack (Variable Calculation)
+1300,Attack (Variable Calculation)
+1301,Tentacle
+1302,Tentacle
+1303,Tentacle
+1304,<IC_IMGC>Protect
+1305,<IC_BMGC>Flare
+1306,Inaction (Variable Calculation)
+1307,<IC_BMGC>Fira
+1308,<IC_BMGC>Blizzara
+1309,<IC_BMGC>Thundara
+1310,Throw (Dadaluma)
+1311,Throw (Dadaluma)
+1312,Meteor
+1313,Mind Blast
+1314,<IC_BMGC>Fira or <IC_BMGC>Firaga
+1315,<IC_IMGC>Haste
+1316,Inaction (Variable Calculation)
+1317,Inaction (Variable Calculation)
+1318,Inaction (Variable Calculation)
+1319,Inaction (Variable Calculation)
+1320,Tentacle
+1321,Inaction (Variable Calculation)
+1322,Snort
+1323,Inaction (Variable Calculation)
+1324,Inaction (Variable Calculation)
+1325,Inaction (Variable Calculation)
+1326,Inaction (Variable Calculation)
+1327,<IC_BMGC>Fira
+1328,<IC_BMGC>Firaga
+1329,<IC_BMGC>Blizzara
+1330,Meteor
+1331,Check Petrification (Magic Urn)
+1332,Check KO (Magic Urn)
+1333,Devil Claw
+1334,Inaction (Variable Calculation)
+1335,Inaction (Variable Calculation)
+1336,Check Reflect (Behemoth King)
+1337,Gigavolt
+1338,<IC_BMGC>Thundaga
+1339,<IC_BMGC>Thunder
+1340,<IC_BMGC>Thundara
+1341,<IC_WMGC>Cure
+1342,Inaction (Variable Calculation)
+1343,Check Approach (Master Tonberry)
+1344,Check KO (Behemoth King)
+1345,Check Sleep (Behemoth King)
+1346,Inaction (Variable Calculation)
+1347,Inaction (Variable Calculation)
+1348,Inaction (Variable Calculation)
+1349,Inaction (Variable Calculation)
+1350,<IC_LMGC>Stone
+1351,<IC_LMGC>White Wind
+1352,<IC_IMGC>Slowga
+1353,Inaction (Variable Calculation)
+1354,Inaction (Variable Calculation)
+1355,<IC_IMGC>Libra
+1356,<IC_LMGC>Reflect ???
+1357,<IC_WMGC>Cure or Inaction
+1358,<IC_BMGC>Thundaga
+1359,<IC_BMGC>Blizzaga
+1360,Inaction (Variable Calculation)
+1361,Inaction (Variable Calculation)
+1362,Inaction (Variable Calculation)
+1363,Inaction (Variable Calculation)
+1364,Inaction (Variable Calculation)
+1365,Inaction (Variable Calculation)
+1366,Inaction (Variable Calculation)
+1367,Inaction (Variable Calculation)
+1368,Inaction (Variable Calculation)
+1369,Blaze
+1370,Inaction (Variable Calculation)
+1371,Inaction (Variable Calculation)
+1372,Inaction (Variable Calculation)
+1373,Inaction (Variable Calculation)
+1374,Inaction (Variable Calculation)
+1375,Inaction (Variable Calculation)
+1376,Check HP (Yeti)
+1377,<IC_BAG>Green Cherry
+1378,Inaction (Yeti)
+1379,Inaction (Yeti)
+1380,Attack or Snowstorm
+1381,Attack or Tackle
+1382,<IC_BMGC>Fire
+1383,Flurry – 舞 (2nd Strike)
+1384,Flurry – 舞 (3rd Strike)
+1385,Flurry – 舞 (4th Strike)
+1386,Tempest – 烈 (2nd Strike)
+1387,Tempest – 烈 (3rd Strike)
+1388,Tempest – 烈 (4th Strike)
+1389,<IC_BMGC>Meteor
+1390,Check Turn for Missile (Satellite)
+1391,Jump (Leap Frog)
+1392,Jump (Leap Frog - Fall)
+1393,<IC_WMGC>Cura
+1394,<IC_WMGC>Curaga
+1395,<IC_BMGC>Fire
+1396,<IC_BMGC>Fira
+1397,<IC_BMGC>Blizzara
+1398,<IC_BMGC>Thundara
+1399,<IC_BMGC>Bio
+1400,<IC_BMGC>Firaga
+1401,<IC_BMGC>Blizzaga
+1402,<IC_BMGC>Thundaga
+1403,<IC_IMGC>Hastega
+1404,Blaster
+1405,Fireball
+1406,Megavolt
+1407,Gigavolt
+1408,Snowstorm
+1409,Flash Rain
+1410,Flare Star
+1411,Disaster
+1412,Metal Cutter
+1413,Digestive Fluid
+1414,Targeting? (Vargas)
+1415,<IC_BMGC>Blizzara
+1416,<IC_BMGC>Thundara
+1417,<IC_IMGC>Reflect
+1418,<IC_WMGC>Cura
+1419,Delta Attack
+1420,Appear (Ymir)
+1421,Inaction (Variable Calculation)
+1422,Inaction (Variable Calculation)
+1423,Inaction (Variable Calculation)
+1424,Throw (Dadaluma)
+1425,Withdraw (Ymir)
+1426,Check Reflect (Red Dragon)
+1427,Imp Song
+1428,Megavolt
+1429,Snort
+1430,Flash Rain
+1431,<IC_IMGC>Vanish
+1432,<IC_IMGC>Protect
+1433,<IC_IMGC>Haste
+1434,Gigavolt
+1435,Retort (Gigantos)
+1436,<IC_BMGC>Firaga
+1437,<IC_BMGC>Bio
+1438,Retort (Gigantos)
+1439,Sapping Strike or Dread Gaze
+1440,<IC_IMGC>Hastega
+1441,<IC_WMGC>Cura or <IC_WMGC>Esuna or <IC_IMGC>Haste
+1442,Reverse Polarity
+1443,Sonic Boom
+1444,<IC_BMGC>Fire
+1445,<IC_BMGC>Fira
+1446,<IC_BMGC>Firaga
+1447,Repose
+1448,Dispatch
+1449,Runic (Bit)
+1450,<IC_BMGC>Blizzara
+1451,<IC_BMGC>Holy
+1452,<IC_IMGC>Shell
+1453,
+1454,<IC_LMGC>Self-Destruct
+1455,
+1456,Inaction (Variable Calculation)
+1457,Inaction (Variable Calculation)
+1458,Inaction (Variable Calculation)
+1459,"Wave Cannon, Inaction (Variable Calculation)"
+1460,"Mind Blast, Inaction (Variable Calculation)"
+1461,"Gigavolt, Inaction (Variable Calculation)"
+1462,"<IC_BMGC>Firaga, Inaction (Variable Calculation)"
+1463,"<IC_IMGC>Protect, Inaction (Variable Calculation)"
+1464,"<IC_BMGC>Blizzara, Inaction (Variable Calculation)"
+1465,"Absolute Zero, Inaction (Variable Calculation)"
+1466,"<IC_WMGC>Cura, Inaction (Variable Calculation)"
+1467,"<IC_BMGC>Firaga, Inaction (Variable Calculation)"
+1468,"<IC_BMGC>Blizzaga, Inaction (Variable Calculation)"
+1469,"<IC_BMGC>Fira, Inaction (Variable Calculation)"
+1470,"<IC_BMGC>Firaga, Inaction (Variable Calculation)"
+1471,"Missile, Inaction (Variable Calculation)"
+1472,"Fireball, Inaction (Variable Calculation)"
+1473,"<IC_BMGC>Thunder, Inaction (Variable Calculation)"
+1474,"<IC_BMGC>Thundara, Inaction (Variable Calculation)"
+1475,"<IC_BMGC>Fira, Inaction (Variable Calculation)"
+1476,"<IC_BMGC>Blizzara, Inaction (Variable Calculation)"
+1477,"<IC_BMGC>Holy, Inaction (Variable Calculation)"
+1478,"Diabolic Whistle, Inaction (Variable Calculation)"
+1479,"Mind Blast, Inaction (Variable Calculation)"
+1480,"<IC_BMGC>Blizzara, Inaction (Variable Calculation)"
+1481,"Meteor, Inaction (Variable Calculation)"
+1482,"Gigavolt, Inaction (Variable Calculation)"
+1483,"<IC_BMGC>Thunder, Inaction (Variable Calculation)"
+1484,"<IC_BMGC>Thundara, Inaction (Variable Calculation)"
+1485,"<IC_BMGC>Meteor, Inaction (Variable Calculation)"
+1486,"<IC_IMGC>Reflect, Inaction (Variable Calculation)"
+1487,"Gigavolt, Inaction (Variable Calculation)"
+1488,"<IC_BMGC>Firaga, Inaction (Variable Calculation)"
+1489,"<IC_BMGC>Blizzara, Inaction (Variable Calculation)"
+1490,"<IC_BMGC>Holy, Inaction (Variable Calculation)"
+1491,Wave Cannon
+1492,Mind Blast
+1493,Gigavolt
+1494,<IC_BMGC>Firaga
+1495,<IC_IMGC>Protect
+1496,<IC_BMGC>Blizzara
+1497,Absolute Zero
+1498,<IC_WMGC>Cura
+1499,<IC_BMGC>Firaga
+1500,<IC_BMGC>Blizzaga
+1501,<IC_BMGC>Fira
+1502,<IC_BMGC>Firaga
+1503,Missile
+1504,Fireball
+1505,<IC_BMGC>Thunder
+1506,<IC_BMGC>Thundara
+1507,<IC_BMGC>Fira
+1508,<IC_BMGC>Blizzara
+1509,<IC_BMGC>Holy
+1510,Diabolic Whistle
+1511,Mind Blast
+1512,<IC_BMGC>Blizzara
+1513,Meteor
+1514,Gigavolt
+1515,<IC_BMGC>Thunder
+1516,<IC_BMGC>Thundara
+1517,<IC_BMGC>Meteor
+1518,<IC_IMGC>Reflect
+1519,Gigavolt
+1520,<IC_BMGC>Firaga
+1521,<IC_BMGC>Blizzara
+1522,<IC_BMGC>Holy
+1523,Disappear
+1524,<IC_LMGC>Stone
+5000,Inaction
+5001,Inaction
+5002,Inaction
+5003,Inaction
+5004,Inaction
+5005,Inaction
+5006,Inaction
+5007,Inaction
+5008,Inaction
+5009,Inaction
+5010,Inaction
+5011,Inaction
+5012,Inaction
+5013,Inaction
+5014,Inaction
+5015,Inaction
+5016,Inaction
+5017,Inaction
+5018,Inaction
+5019,Inaction
+5020,Inaction
+5021,Inaction
+5022,Inaction
+5023,Inaction
+5024,Inaction
+5025,Inaction
+5026,Inaction
+5027,Inaction
+5028,Inaction
+5029,Inaction
+5030,Inaction
+5031,Inaction
+5032,Inaction
+5033,Inaction
+5034,Inaction
+5035,Inaction
+5036,Inaction
+5037,Inaction
+5038,Inaction
+5039,Inaction
+5040,Inaction
+5041,Inaction
+5042,Inaction
+5043,Inaction
+5044,Inaction
+5045,Inaction
+5046,Inaction
+5047,Inaction
+5048,Inaction
+5049,Inaction
+5050,Inaction
+5051,Inaction
+5052,Inaction
+5053,Inaction
+5054,Inaction
+5055,Inaction
+5056,Inaction
+5057,Inaction
+5058,Inaction
+5059,Inaction
+5060,Inaction
+5061,Inaction
+5062,Inaction
+5063,Inaction
+5064,Inaction
+5065,Inaction
+5066,Inaction
+5067,Inaction
+5068,Inaction
+5069,Inaction
+5070,Inaction
+5071,Inaction
+5072,Inaction
+5073,Inaction
+5074,Inaction
+5075,Inaction
+5076,Inaction
+5077,Inaction
+5078,Inaction
+5079,Inaction
+5080,Inaction
+5081,Inaction
+5082,Inaction
+5083,Inaction
+5084,Inaction
+5085,Inaction
+5086,Inaction
+5087,Inaction
+5088,Inaction
+5089,Inaction
+5090,Inaction
+5091,Inaction
+5092,Inaction
+5093,Inaction
+5094,Inaction
+5095,Inaction
+5096,Inaction
+5097,Inaction
+5098,Inaction
+5099,Inaction
+5100,Inaction
+5102,Inaction
+5103,Inaction
+5104,Inaction
+5105,Inaction
+5106,Inaction
+5107,Inaction
+5108,Inaction
+5109,Inaction
+5110,Inaction
+5111,Inaction
+5112,Inaction
+5113,Inaction
+5114,Inaction
+5115,Inaction
+5116,Inaction
+5117,Inaction
+5118,Inaction
+5119,Inaction
+5120,Inaction
+5121,Inaction
+5122,Inaction
+5123,Inaction
+5124,Inaction
+5125,Inaction
+5126,Inaction
+5127,Inaction
+5900,Inaction
+5901,Inaction
+5902,Inaction
+5903,Inaction
+5904,Inaction
+5905,Inaction
+5906,Inaction
+5907,Inaction
+5908,Inaction
+5909,Inaction
+5910,Inaction
+5911,Inaction
+5912,Inaction
+5913,Inaction
+5914,Inaction
+5915,Inaction
+5916,Inaction
+5917,Skip

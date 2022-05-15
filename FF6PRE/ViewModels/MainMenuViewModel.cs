@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Text.Json;
 using System.Windows.Input;
 using System.Windows;
+using System.Reflection;
 
 namespace FF6PRE.ViewModels
 {
@@ -57,6 +58,8 @@ namespace FF6PRE.ViewModels
         private Settings? settings;
 
         private List<AiScript> aiScripts;
+
+        private Dictionary<int, string> abilityNames;
 
         public MainMenuViewModel(MainWindowViewModel MainWindowVM)
         {
@@ -121,6 +124,7 @@ namespace FF6PRE.ViewModels
                     if (aiScripts == null)
                     {
                         loadAiScripts(aiPath);
+                        loadAbilityNames();
                     }
                     IsSaveEnabled = true;
                     CurrentView = new AiEditorViewModel(this, ref aiScripts);
@@ -150,6 +154,21 @@ namespace FF6PRE.ViewModels
                 }
             }
         }
+
+        private void loadAbilityNames()
+        {
+            using (var reader = new StreamReader(Assembly.GetExecutingAssembly().GetManifestResourceStream("FF6PRE.Resources.ability.csv")))
+            {
+                Utils.AbilityKeyValues = new SortedDictionary<int, string>();
+                string line;
+                while ((line = reader.ReadLine()) != null)
+                {
+                    string[] idDesc = line.Split(",");
+                    Utils.AbilityKeyValues.Add(int.Parse(idDesc[0].Trim()), idDesc[0].Trim() + " - " + idDesc[1].Trim());
+                }
+                Utils.AbilityKeyValues.Add(0, "0 - Nothing");
+            }
+    }
 
         private void Save()
         {

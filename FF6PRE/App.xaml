@@ -19,6 +19,12 @@
             <DataTemplate DataType="{x:Type vm:AiEditorViewModel}">
                 <v:AiEditorView />
             </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:MultiDefaultValuesViewModel}">
+                <v:MultiDefaultValuesView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:ActViewModel}">
+                <v:ActView />
+            </DataTemplate>
         </ResourceDictionary>
     </Application.Resources>
 </Application>
