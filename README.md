@@ -1,4 +1,4 @@
-# FF6PRE 1.0.2
+# FF6PRE 1.0.3
 FF6 Pixel Remaster Editor
 
 ## Usage
@@ -12,7 +12,7 @@ This application require .NET Core 3.1. You can find the latest .NET Desktop Run
 - Can insert new mnemonics or delete the selected one.
 - Restore script button to put the script in its state at the last saving.
 - Clean script button to have a blank script.
-- The Act mnemonics (Act, CounterAct, FinalAttackAct, etc.) have their own User Control. It consist for each action of a combobox to select the action and a textbox to enter the percentage. When mouse focused on a combobox, you can press F2 to enter search mode and type the action you want to select. You can quit this mode by pressing F1.
+- The Act mnemonics (Act, CounterAct, FinalAttackAct, etc.) have their own User Control. It consist for each action of a combobox to select the action and a textbox to enter the percentage. When mouse focused on a combobox, you can press F1 to toggle between regular combobox and searcheable combobox.
 - Different validations for the Act mnemonics, if you have a warning it will appear when you switch mnemonic within the same script.
 
 ## Images
