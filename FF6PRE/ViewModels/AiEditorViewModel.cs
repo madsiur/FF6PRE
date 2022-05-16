@@ -104,7 +104,7 @@ namespace FF6PRE.ViewModels
             get { return _currentAiMnemonic; }
             set
             {
-                if (_currentAiMnemonic != null && !isChangingProperty)
+                if (_currentAiMnemonic != null && !isChangingProperty && !isRestoringScript)
                 {
                     if (Utils.isActMnemonic(_currentAiMnemonic) && !(CurrentAiValVM as ActViewModel).IsButtonPressed)
                     {
@@ -114,18 +114,23 @@ namespace FF6PRE.ViewModels
 
                 OnPropertyChanged(ref _currentAiMnemonic, value);
 
-                if (_currentAiMnemonic != null && !isChangingProperty)
+                if (_currentAiMnemonic != null)
                 {
+                    isInitMnemonic = true;
+                    if (!isChangingProperty)
+                    {
+                        CurrentMnemonicName = _currentAiMnemonic.MnemonicName;
+                        CurrentType = _currentAiMnemonic.Type;
+                        CurrentLabel = _currentAiMnemonic.Label;
+                        CurrentComment = _currentAiMnemonic.Comment;
+                    }
                     if (Utils.isActMnemonic(_currentAiMnemonic))
                     {
                         if (!(CurrentAiValVM is ActViewModel))
                         {
                             CurrentAiValVM = new ActViewModel(this);
                         }
-
-                        initRefresh();
                         (CurrentAiValVM as ActViewModel).refreshAct(_currentAiMnemonic);
-                        isInitMnemonic = false;
                     }
                     else
                     {
@@ -133,11 +138,9 @@ namespace FF6PRE.ViewModels
                         {
                             CurrentAiValVM = new MultiDefaultValuesViewModel(this);
                         }
-
-                        initRefresh();
                         (CurrentAiValVM as MultiDefaultValuesViewModel).refreshValues(_currentAiMnemonic);
-                        isInitMnemonic = false;
                     }
+                    isInitMnemonic = false;
                 }
             }
         }
@@ -154,6 +157,7 @@ namespace FF6PRE.ViewModels
                 {
                     isChangingProperty = true;
                     AiScripts[ScriptIndex].Mnemonics[AiScripts[ScriptIndex].Mnemonics.IndexOf(CurrentAiMnemonic)].MnemonicName = _currentMnemonicName;
+                    AiScripts[ScriptIndex].Mnemonics[AiScripts[ScriptIndex].Mnemonics.IndexOf(CurrentAiMnemonic)].AiMnemon = Utils.getAiMnemonic(_currentMnemonicName);
                     setSelectedAiScript();
                     isChangingProperty = false;
                 }
@@ -246,6 +250,7 @@ namespace FF6PRE.ViewModels
         #endregion
 
         public bool isInitMnemonic = false;
+        public bool isRestoringScript = false;
         public bool isChangingProperty = false;
         private List<AiScript> aiScriptsBackups;
 
@@ -333,9 +338,11 @@ namespace FF6PRE.ViewModels
 
         private void RestoreScript()
         {
+            isRestoringScript = true;
             int index = ScriptIndex;
             AiScripts[index] = aiScriptsBackups[index].Clone();
             SelectedAiScript = AiScripts[index];
+            isRestoringScript = false;
         }
 
         private void ClearScript()
@@ -389,15 +396,6 @@ namespace FF6PRE.ViewModels
             {
                 Utils.showWarning("Total percentage (" + total + ") is not 100.");
             }
-        }
-
-        private void initRefresh()
-        {
-            isInitMnemonic = true;
-            CurrentMnemonicName = _currentAiMnemonic.MnemonicName;
-            CurrentType = _currentAiMnemonic.Type;
-            CurrentLabel = _currentAiMnemonic.Label;
-            CurrentComment = _currentAiMnemonic.Comment;
         }
 
         public int ScriptIndex

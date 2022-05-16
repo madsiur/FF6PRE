@@ -39,7 +39,7 @@ namespace FF6PRE.Models
             this.Comment = comment;
             this.Operands = jsonOperands;
             Description = string.Empty;
-            AiMnemon = getAiMnemonic();
+            AiMnemon = Utils.getAiMnemonic(MnemonicName);
         }
 
         public Mnemonic(int id, string label, string mnemonicName, int type, string comment)
@@ -54,20 +54,10 @@ namespace FF6PRE.Models
             this.Operands.rValues = new List<float>();
             this.Operands.sValues = new List<string>();
             Description = string.Empty;
-            AiMnemon = getAiMnemonic();
+            AiMnemon = Utils.getAiMnemonic(MnemonicName);
         }
 
-        private AiMnemonic getAiMnemonic()
-        {
-            foreach (string aim in Enum.GetNames(typeof(AiMnemonic)))
-            {
-                if (MnemonicName == aim)
-                {
-                    return (AiMnemonic)Enum.Parse(typeof(AiMnemonic), aim);
-                }
-            }
-            return AiMnemonic.Other;
-        }
+
 
         public void fillValues()
         {

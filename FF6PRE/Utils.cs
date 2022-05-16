@@ -24,6 +24,18 @@ namespace FF6PRE
                    am == AiMnemonic.FirstAttackAct || am == AiMnemonic.FinalAttackAct || am == AiMnemonic.CounterActAll;
         }
 
+        public static AiMnemonic getAiMnemonic(string name)
+        {
+            foreach (string aim in Enum.GetNames(typeof(AiMnemonic)))
+            {
+                if (name == aim)
+                {
+                    return (AiMnemonic)Enum.Parse(typeof(AiMnemonic), name);
+                }
+            }
+            return AiMnemonic.Other;
+        }
+
         public static bool DirectoryExists(string path)
         {
             if(!Directory.Exists(path))
